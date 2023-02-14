@@ -11,7 +11,7 @@
 		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
 	<body>
-		<div class="infocreation">
+		<div class="container-fluid infocreation">
 			<h1>Hello, world!</h1>
 			<p>
 			Le site est en cours de créations, et il y a du boulot !<br>

@@ -8,12 +8,13 @@
 
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
 	<body>
-		<div style="width: 100%; height: 100%; vertical-align: middle; text-align: center;">
+		<div class="infocreation">
 			<h1>Hello, world!</h1>
 			<p>
-			Le site est en cours de créations, et il y a du boulot !
+			Le site est en cours de créations, et il y a du boulot !<br>
 			Revenez dans quelques temps, et vous pourrez admirer le travail.
 			</p>
 		</div>

@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech&display=swap');
+
 html, body {
 	background-color: rgba(20, 42, 72, 1);
 	color: white;
 }
 .infocreation {
+	font-family: 'Share Tech', sans-serif;
 	text-align: center;
 }

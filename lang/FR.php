@@ -2,7 +2,7 @@
 
 $lang = array(
     "titredusite" => "BK-Coding.net",
-    "slogandusite" => ""
+    "slogandusite" => "Veille IT"
 );
 
 ?>

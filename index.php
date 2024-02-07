@@ -16,7 +16,8 @@ include ('lang/FR.php');
 	</head>
 	<body>
 		<div class="container-fluid infocreation">
-			<h1>Hello, world!</h1>
+			<h1><?php echo $lang["titredusite"]; ?></h1>
+			<h3>Hello, world!</h3>
 			<p>
 			Le site est en cours de création, et il y a du boulot !<br>
 			Revenez dans quelques temps, et vous pourrez admirer le travail.

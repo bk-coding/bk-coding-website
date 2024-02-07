@@ -1,10 +1,13 @@
+<?php
+include ('lang/FR.php');
+?>
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
 		<!-- Required meta tags -->
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<title>BK-Coding.net</title>
+		<title><?php echo $lang["titredusite"]." - ".$lang["slogandusite"]; ?></title>
 
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" crossorigin="anonymous">

@@ -15,7 +15,7 @@
 		<div class="container-fluid infocreation">
 			<h1>Hello, world!</h1>
 			<p>
-			Le site est en cours de créations, et il y a du boulot !<br>
+			Le site est en cours de création, et il y a du boulot !<br>
 			Revenez dans quelques temps, et vous pourrez admirer le travail.
 			</p>
 		</div>

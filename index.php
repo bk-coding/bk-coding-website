@@ -7,7 +7,7 @@ include ('lang/FR.php');
 		<!-- Required meta tags -->
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<title><?php echo $lang["titredusite"]." - ".$lang["slogandusite"]; ?></title>
+		<title><?= $lang["titredusite"]." - ".$lang["slogandusite"]; ?></title>
 
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" crossorigin="anonymous">
@@ -17,7 +17,7 @@ include ('lang/FR.php');
 	<body>
 		<div class="boite">
 			<div class="infocreation">
-				<h1><?php echo $lang["titredusite"]; ?></h1>
+				<h1><?= $lang["titredusite"]; ?></h1>
 				<h3>Hello, world!</h3>
 				<p>
 				Le site est en cours de création, et il y a du boulot !<br>

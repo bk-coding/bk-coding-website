@@ -2,7 +2,7 @@
 session_start();
 
 // Paramètres de connexion à la base de données
-$host = 'bk-coding.net'; // ou l'IP du serveur de base de données
+$host = 'localhost'; // ou l'IP du serveur de base de données
 $dbname = 'u626852211_BKCsite';
 $username = 'u626852211_BKC';
 $password = 'Kilian03+';

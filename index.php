@@ -23,6 +23,12 @@ include ('lang/FR.php');
 				Le site est en cours de création, et il y a du boulot !<br>
 				Revenez dans quelques temps, et vous pourrez admirer le travail.
 				</p>
+				<form action="authentification.php" method="post">
+					Nom d'utilisateur: <input type="text" name="username" /><br />
+					Mot de passe: <input type="password" name="password" /><br />
+					<?php $mot = "Kilian03+"; echo password_hash($mot, PASSWORD_DEFAULT);
+					<input type="submit" value="Se connecter" />
+				</form>
 			</div>
 		</div>
 
@@ -34,3 +40,4 @@ include ('lang/FR.php');
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
 	</body>
 </html>
+

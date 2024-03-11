@@ -1,7 +1,5 @@
-<?php
-session_start();
+<?php $title = $lang["dashboard"]; include('parts/header.php'); ?>
 
-$username = $_SESSION['username'];
+<?php echo "Bienvenue " . $username . " ! Vous êtes connecté."; ?>
 
-echo "Bienvenue " . $username . " ! Vous êtes connecté.";
-?>
+<?php include('parts/footer.php'); ?>

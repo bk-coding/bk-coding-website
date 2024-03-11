@@ -1,8 +1,9 @@
 <?php
 
 $lang = array(
-    "titredusite" => "BK-Coding.net",
-    "slogandusite" => "Veille IT"
+    "sitename" => "BK-Coding.net",
+    "slogan" => "Veille IT",
+    "dashboard" => "Tableau de bord"
 );
 
 ?>

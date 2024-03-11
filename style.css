@@ -1,24 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Share+Tech&display=swap');
 
-html, body {
+html,
+body {
 	margin: 0;
 	background-color: rgba(20, 42, 72, 1);
 	color: white;
 	width: 100%;
 	height: 100%;
 }
+
 .bodycontainer {
 	width: 100%;
 	height: 100%;
 	display: flex;
 }
+
 .boitecentre {
 	height: 100%;
 	width: 100%;
 	display: flex;
 	justify-content: center;
-  	align-items: center;
+	align-items: center;
 }
+
 .infocreation {
 	background-color: rgb(13, 27, 46);
 	font-family: 'Share Tech', sans-serif;
@@ -27,17 +31,21 @@ html, body {
 	padding: 5%;
 	box-shadow: 10px 5px 5px black;
 }
+
 .toolbar {
 	width: 100%;
 	background-color: black;
 	font-family: 'Share Tech', sans-serif;
 }
+
 .header {
 	position: fixed;
 	top: 0px;
 	border-bottom: dashed yellow;
 }
+
 .footer {
+	display: flex;
 	position: fixed;
 	bottom: 0px;
 	text-align: center;

@@ -1,4 +1,4 @@
-<div class="footer toolbar"><?php echo "Bienvenue " . $username . " ! Vous êtes connecté."; ?></div>
+<div class="footer toolbar"><?php echo $lang['sitename']." &copy; ".date("Y"); ?></div>
 <!-- Optional JavaScript -->
 
 		<!-- jQuery first, then Popper.js, then Bootstrap JS -->

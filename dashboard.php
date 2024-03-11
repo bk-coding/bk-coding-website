@@ -1,5 +1,5 @@
 <?php $title = "dashboard"; include('parts/header.php'); ?>
 
-<?php echo "Bienvenue " . $username . " ! Vous êtes connecté."; ?>
+<div> exemple </div>
 
 <?php include('parts/footer.php'); ?>

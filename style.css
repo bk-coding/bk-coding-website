@@ -34,9 +34,11 @@ html, body {
 .header {
 	position: fixed;
 	top: 0px;
+	border-bottom: dashed yellow;
 }
 .footer {
 	position: fixed;
 	bottom: 0px;
 	text-align: center;
+	border-top: dashed yellow;
 }

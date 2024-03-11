@@ -1,6 +1,6 @@
             <div class="footer toolbar">
                 <div class="footercontainer">
-                    <?php echo "<p>".$lang['sitename']." &copy; ".date("Y")."</p>"; ?>
+                    <?php echo "<div>".$lang['sitename']." &copy; ".date("Y")."</div>"; ?>
                 </div>
             </div>
         </div>

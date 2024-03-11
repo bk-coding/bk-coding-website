@@ -44,7 +44,7 @@ body {
 	border-bottom: dashed yellow;
 }
 .headercontainer {
-	display: inline-block;
+	display: block;
 }
 
 .footer {
@@ -54,5 +54,5 @@ body {
 	border-top: dashed yellow;
 }
 .footercontainer {
-	display: inline-block;
+	display: block;
 }

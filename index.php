@@ -1,4 +1,9 @@
 <?php
+session_start();
+if ($_SESSION['loggedin']) {
+    header("Location: dashboard.php");
+	exit;
+}
 include ('lang/FR.php');
 ?>
 <!DOCTYPE html>
@@ -8,9 +13,6 @@ include ('lang/FR.php');
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<title><?= $lang["sitename"]." - ".$lang["slogan"]; ?></title>
-
-		<!-- Bootstrap CSS -->
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" crossorigin="anonymous">
 		<!-- Style CSS -->
 		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
@@ -30,13 +32,6 @@ include ('lang/FR.php');
 				</form>
 			</div>
 		</div>
-
-		<!-- Optional JavaScript -->
-
-		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-		<script src="https://code.jquery.com/jquery-3.6.3.min.js" crossorigin="anonymous"></script>
-		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" crossorigin="anonymous"></script>
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
 	</body>
 </html>
 

@@ -43,10 +43,16 @@ body {
 	top: 0px;
 	border-bottom: dashed yellow;
 }
+.headercontainer {
+	display: inline-block;
+}
 
 .footer {
 	position: fixed;
 	bottom: 0px;
 	text-align: center;
 	border-top: dashed yellow;
+}
+.footercontainer {
+	display: inline-block;
 }

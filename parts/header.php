@@ -19,4 +19,9 @@ $titlea = $lang[$title];
 	</head>
 	<body>
         <div class="bodycontainer">
-            <div class="header toolbar"><img src="img/logo.webp" /><?php echo "<p> Bienvenue " . $username . " ! Vous êtes connecté.</p>"; ?></div>
+            <div class="header toolbar">
+				<div class="headercontainer">
+					<img src="img/logo.webp" />
+					<?php echo "<p> Bienvenue " . $username . " ! Vous êtes connecté.</p>"; ?>
+				</div>
+			</div>

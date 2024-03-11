@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Share+Tech&display=swap');
 
+:root {
+	--height10: 10%;
+
+}
+
 html,
 body {
 	margin: 0;
@@ -7,15 +12,15 @@ body {
 	color: white;
 	width: 100%;
 	height: 100%;
-	--height5: 5%;
 }
+
 img {
 	width: auto;
 	height: auto;
 }
 
 .bodycontainer {
-	margin-top: var(--height5);
+	margin-top: var(--height10);
 	width: 100%;
 	height: 100%;
 	display: flex;
@@ -48,7 +53,7 @@ img {
 }
 
 .header {
-	height: var(--height5);
+	height: var(--height10);
 	top: 0px;
 	border-bottom: dashed yellow;
 	justify-content: space-around;

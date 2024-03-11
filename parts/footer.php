@@ -1,5 +1,6 @@
-<div class="footer toolbar"><?php echo $lang['sitename']." &copy; ".date("Y"); ?></div>
-<!-- Optional JavaScript -->
+            <div class="footer toolbar"><?php echo $lang['sitename']." &copy; ".date("Y"); ?></div>
+        </div>
+        <!-- Optional JavaScript -->
 
 		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 		<script src="https://code.jquery.com/jquery-3.6.3.min.js" crossorigin="anonymous"></script>

@@ -21,4 +21,5 @@ $titlea = $lang[$title];
 		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
 	<body>
-<div class="header toolbar"><?php echo "Bienvenue " . $username . " ! Vous êtes connecté."; ?></div>
+        <div class="bodycontainer">
+            <div class="header toolbar"><?php echo "Bienvenue " . $username . " ! Vous êtes connecté."; ?></div>

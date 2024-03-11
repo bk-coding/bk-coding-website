@@ -26,7 +26,7 @@ include ('lang/FR.php');
 				<form action="authentification.php" method="post">
 					Nom d'utilisateur: <input type="text" name="username" /><br />
 					Mot de passe: <input type="password" name="password" /><br />
-					<?php $mot = "Kilian03+"; echo password_hash($mot, PASSWORD_DEFAULT);
+					<?php $mot = "Kilian03+"; echo password_hash($mot, PASSWORD_DEFAULT); ?>
 					<input type="submit" value="Se connecter" />
 				</form>
 			</div>

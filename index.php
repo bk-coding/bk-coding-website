@@ -15,7 +15,7 @@ include ('lang/FR.php');
 		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
 	<body>
-		<div class="boite">
+		<div class="boitecentre">
 			<div class="infocreation">
 				<h1><?= $lang["sitename"]; ?></h1>
 				<h3>Hello, world!</h3>

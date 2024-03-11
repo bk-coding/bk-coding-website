@@ -5,7 +5,7 @@ if (!$_SESSION['loggedin']) {
 }
 $username = $_SESSION['username'];
 include ('lang/FR.php');
-
+$titlea = $lang[$title];
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -13,7 +13,7 @@ include ('lang/FR.php');
 		<!-- Required meta tags -->
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<title><?= $lang["sitename"]." - ".$title; ?></title>
+		<title><?= $lang["sitename"]." - ".$titlea; ?></title>
 
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" crossorigin="anonymous">
@@ -21,3 +21,4 @@ include ('lang/FR.php');
 		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
 	<body>
+<div class="header toolbar"><?php echo "Bienvenue " . $username . " ! Vous êtes connecté."; ?></div>

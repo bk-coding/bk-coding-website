@@ -1,4 +1,5 @@
-        <!-- Optional JavaScript -->
+<div class="footer toolbar"><?php echo "Bienvenue " . $username . " ! Vous êtes connecté."; ?></div>
+<!-- Optional JavaScript -->
 
 		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 		<script src="https://code.jquery.com/jquery-3.6.3.min.js" crossorigin="anonymous"></script>

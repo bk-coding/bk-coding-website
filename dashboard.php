@@ -1,4 +1,4 @@
-<?php $title = $lang["dashboard"]; include('parts/header.php'); ?>
+<?php $title = "dashboard"; include('parts/header.php'); ?>
 
 <?php echo "Bienvenue " . $username . " ! Vous êtes connecté."; ?>
 

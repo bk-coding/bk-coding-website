@@ -58,15 +58,12 @@ body {
 }
 
 .header img {
-	justify-self: left;
 	align-self: start;
 	height: var(--height20);
 }
 
-.header .message{
-	justify-self: right;
-	padding-left: var(--height10);
-	padding-right: var(--height10);
+.message{
+	margin: auto;
 }
 
 .bodycontent {

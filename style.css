@@ -67,7 +67,7 @@ body {
 }
 
 .bodycontent {
-	margin: var(--height20);
+	margin: var(--height20) var(--height10) var(--height5);
 }
 
 .footer {

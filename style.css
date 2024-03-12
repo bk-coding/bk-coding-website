@@ -77,7 +77,7 @@ a {
 }
 
 .bodycontent {
-	margin: var(--height20) var(--height10) var(--height5);
+	margin: var(--height20) 5vw var(--height5);
 }
 
 .footer {

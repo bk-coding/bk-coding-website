@@ -20,6 +20,7 @@ body {
 .bodycontainer {
 	background-color: var(--colorblue);
 	margin-top: var(--height10);
+	padding-top: 5vh;
 	width: 100%;
 	height: 100%;
 	display: flex;
@@ -47,7 +48,7 @@ body {
 	background-color: black;
 	font-family: 'Share Tech', sans-serif;
 	position: fixed;
-	display: inline-flex;
+	display: flex;
 	align-items: center;
 }
 
@@ -56,12 +57,11 @@ body {
 	top: 0px;
 	border-bottom: dashed yellow;
 	justify-content: space-between;
-	padding-left: var(--height10);
-	padding-right: var(--height10);
 }
 
 .header img {
 	align-self: start;
+	height: 15vh;
 }
 
 .footer {

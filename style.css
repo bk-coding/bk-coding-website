@@ -65,6 +65,7 @@ a {
 .header .logo {
 	align-self: start;
 	height: var(--height20);
+	width: auto;
 }
 
 .message {

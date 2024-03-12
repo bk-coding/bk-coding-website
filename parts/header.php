@@ -21,7 +21,7 @@ $titlea = $lang[$title];
 	<body>
         <div class="bodycontainer">
             <div class="header toolbar">
-				<a href="https://bk-coding.net"><img src="img/logo.webp" /></a>
+				<div class="logo"><a href="https://bk-coding.net"><img src="img/logo.webp" /></a></div>
 				<?php echo "<div class=\"message\"> Bienvenue " . $username . " ! Vous êtes connecté.</div>"; ?>
 				<div class="menu"><a href="deconnexion.php"><i class="fa-solid fa-power-off"></i></a></div>
 			</div>

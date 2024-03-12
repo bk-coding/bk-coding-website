@@ -18,6 +18,11 @@ body {
 	height: 100%;
 }
 
+a {
+	text-decoration: none;
+	color: white;
+}
+
 .bodycontainer {
 	background-color: var(--colorblue);
 	width: 100%;
@@ -57,17 +62,18 @@ body {
 	border-bottom: dashed yellow;
 }
 
-.header img {
+.header .logo {
 	align-self: start;
 	height: var(--height20);
 }
 
-.message{
+.message {
 	margin: auto;
 }
 
 .menu {
-	
+	margin: auto;
+
 }
 
 .bodycontent {

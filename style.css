@@ -56,7 +56,8 @@ body {
 	top: 0px;
 	border-bottom: dashed yellow;
 	justify-content: space-between;
-	padding: auto var(--height10) auto var(--height10);
+	padding-left: var(--height10);
+	padding-right: var(--height10);
 }
 
 .header img {

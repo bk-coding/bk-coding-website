@@ -21,5 +21,5 @@ $titlea = $lang[$title];
         <div class="bodycontainer">
             <div class="header toolbar">
 				<img src="img/logo.webp" />
-				<?php echo "<div> Bienvenue " . $username . " ! Vous êtes connecté.</div>"; ?>
+				<?php echo "<div class=\"message\"> Bienvenue " . $username . " ! Vous êtes connecté.</div>"; ?>
 			</div>

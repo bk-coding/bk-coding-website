@@ -3,6 +3,7 @@
 :root {
 	--height5: 5vh;
 	--height10: 10vh;
+	--height20: 20vh;
 	--colorblue: rgba(20, 42, 72, 1);
 	--colordarkblue: rgb(13, 27, 46);
 	--colorblack: black;
@@ -19,7 +20,6 @@ body {
 
 .bodycontainer {
 	background-color: var(--colorblue);
-	padding-top: 20vh;
 	width: 100%;
 	height: 100%;
 	display: flex;
@@ -60,7 +60,17 @@ body {
 
 .header img {
 	align-self: start;
-	height: 20vh;
+	height: var(--height20);
+}
+
+.header .message{
+	align-self: end;
+	padding-left: var(--height10);
+	padding-right: var(--height10);
+}
+
+.bodycontent {
+	margin-top: var(--height20);
 }
 
 .footer {

@@ -66,6 +66,10 @@ body {
 	margin: auto;
 }
 
+.menu {
+	
+}
+
 .bodycontent {
 	margin: var(--height20) var(--height10) var(--height5);
 }

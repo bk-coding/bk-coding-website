@@ -16,10 +16,12 @@ $titlea = $lang[$title];
 		<title><?= $lang["sitename"]." - ".$titlea; ?></title>
 		<!-- Style CSS -->
 		<link rel="stylesheet" type="text/css" href="style.css">
+		<script src="https://kit.fontawesome.com/766d810226.js" crossorigin="anonymous"></script>
 	</head>
 	<body>
         <div class="bodycontainer">
             <div class="header toolbar">
-				<img src="img/logo.webp" />
+				<a href="https://bk-coding.net"><img src="img/logo.webp" /></a>
 				<?php echo "<div class=\"message\"> Bienvenue " . $username . " ! Vous êtes connecté.</div>"; ?>
+				<div class="menu"><a href="deconnexion.php"><i class="fa-solid fa-power-off"></i></a></div>
 			</div>

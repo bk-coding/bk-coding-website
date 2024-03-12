@@ -55,22 +55,22 @@ body {
 	height: var(--height10);
 	top: 0px;
 	border-bottom: dashed yellow;
-	justify-content: space-between;
 }
 
 .header img {
+	justify-self: left;
 	align-self: start;
 	height: var(--height20);
 }
 
 .header .message{
-	align-self: end;
+	justify-self: right;
 	padding-left: var(--height10);
 	padding-right: var(--height10);
 }
 
 .bodycontent {
-	margin-top: var(--height20);
+	margin: var(--height20);
 }
 
 .footer {

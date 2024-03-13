@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+include('functions.php');
+
 // Paramètres de connexion à la base de données
 $host = 'localhost'; // ou l'IP du serveur de base de données
 $dbname = 'u626852211_BKCsite';
@@ -20,8 +22,8 @@ try {
 
 // Vérifie si les données du formulaire ont été soumises
 if (isset($_POST['username']) && isset($_POST['password'])) {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+    $username = clean_input($_POST['username']);
+    $password = clean_input($_POST['password']);
 
     try {
         // Préparation de la requête SQL pour récupérer l'utilisateur par son nom d'utilisateur

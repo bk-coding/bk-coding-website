@@ -5,7 +5,8 @@ $lang = array(
     "slogan" => "Veille IT",
     "dashboard" => "Tableau de bord",
     "message1" => "Bienvenue ",
-    "message2" => " ! Vous êtes connecté."
+    "message2" => " ! Vous êtes connecté.",
+    "infos" => "Informations"
 );
 
 ?>

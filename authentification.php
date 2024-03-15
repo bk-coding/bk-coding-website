@@ -3,22 +3,7 @@ session_start();
 
 include('functions.php');
 
-// Paramètres de connexion à la base de données
-$host = 'localhost'; // ou l'IP du serveur de base de données
-$dbname = 'u626852211_BKCsite';
-$username = 'u626852211_BKC';
-$password = 'Kilian03+';
-
-try {
-    // Connexion à la base de données
-    $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
-
-    // Configuration des attributs PDO pour générer des exceptions en cas d'erreur
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-} catch (PDOException $e) {
-    die("Impossible de se connecter à la base de données : " . $e->getMessage());
-}
+require_once('dbconfig.php');
 
 // Vérifie si les données du formulaire ont été soumises
 if (isset($_POST['username']) && isset($_POST['password'])) {

@@ -1,8 +1,10 @@
 <?php
 session_start();
-if ($_SESSION['loggedin']) {
-    header("Location: dashboard.php");
-	exit;
+if (isset($_SESSION['loggedin'])){
+	if ($_SESSION['loggedin']){
+		header("Location: dashboard.php");
+		exit;
+	}
 }
 include ('lang/FR.php');
 ?>

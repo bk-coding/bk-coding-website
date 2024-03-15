@@ -1,5 +1,5 @@
 <?php $title = "infos"; include('parts/header.php'); ?>
 
-<?php echo phpinfo(); ?>
+<div class="infos"><?= phpinfo(); ?></div>
 
 <?php include('parts/footer.php'); ?>

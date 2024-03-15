@@ -36,6 +36,8 @@ a {
 	border: dashed yellow;
 	padding: 5%;
 	box-shadow: 10px 5px 5px black;
+	align-self: center;
+	justify-self: center;
 }
 
 .toolbar {

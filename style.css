@@ -105,11 +105,6 @@ a {
 		2px 2px 10px rgba(0, 0, 0, 0.8);
 }
 
-.infos {
-	margin: var(--height20) 5vw var(--height5);
-	display: block;
-}
-
 .footer {
 	height: var(--height5);
 	bottom: 0px;

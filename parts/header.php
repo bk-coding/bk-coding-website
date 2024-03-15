@@ -1,10 +1,8 @@
 <?php
 session_start();
-if (isset($_SESSION['loggedin'])){
-	if (!$_SESSION['loggedin']){
-		header("Location: index.php");
-		exit;
-	}
+if (!$_SESSION['loggedin']){
+	header("Location: index.php");
+	exit;
 }
 $username = $_SESSION['username'];
 include ('lang/FR.php');

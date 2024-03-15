@@ -85,6 +85,11 @@ a {
 	margin: var(--height20) 5vw var(--height5);
 }
 
+.carre {
+	width: 44px;
+	height: 44px;
+}
+
 .footer {
 	height: var(--height5);
 	bottom: 0px;

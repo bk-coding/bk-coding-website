@@ -55,6 +55,14 @@ a {
 	border-bottom: dashed yellow;
 }
 
+.footer {
+	height: var(--height5);
+	bottom: 0px;
+	border-top: dashed yellow;
+	justify-content: center;
+	text-align: center;
+}
+
 .header .logo {
 	align-self: start;
 }
@@ -70,11 +78,11 @@ a {
 .menu {
 	margin-right: 5vw;
 	display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
+	flex-flow: row nowrap;
 	justify-content: center;
 	align-items: center;
 }
+
 .menu a {
 	margin: 2vh 2vw;
 	text-align: center;
@@ -89,31 +97,24 @@ a {
 
 .boutons {
 	border: 1px solid whitesmoke;
+	border-radius: 10px;
 	padding: 2vh 2vw;
 	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
+	flex-flow: row wrap;
 }
 
 .bouton {
 	background-color: var(--colordarkblue);
-	min-width: 100px;
+	flex: 100px;
 	height: 100px;
 	margin: 2vh 2vw;
 	padding: 2vh 2vw;
 	border: 1px solid whitesmoke;
 	border-radius: 10px;
+	justify-content: center;
 	text-align: center;
 	box-shadow:
 		2px 2px 5px rgba(245, 245, 245, 0.2) inset,
 		-2px -2px 5px rgba(0, 0, 0, 0.2) inset,
 		2px 2px 10px rgba(0, 0, 0, 0.8);
-}
-
-.footer {
-	height: var(--height5);
-	bottom: 0px;
-	border-top: dashed yellow;
-	justify-content: center;
-	text-align: center;
 }

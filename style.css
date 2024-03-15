@@ -78,9 +78,15 @@ a {
 
 .menu {
 	margin-right: 5vw;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
 }
 .menu a {
 	margin: 2vh 2vw;
+	display: block;
+	text-align: center;
 }
 
 .bodycontent {

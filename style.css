@@ -112,6 +112,7 @@ a {
 	border: 1px solid whitesmoke;
 	border-radius: 10px;
 	text-align: center;
+	vertical-align: middle;
 	box-shadow:
 		2px 2px 5px rgba(245, 245, 245, 0.2) inset,
 		-2px -2px 5px rgba(0, 0, 0, 0.2) inset,

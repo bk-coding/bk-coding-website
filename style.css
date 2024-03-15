@@ -90,7 +90,8 @@ a {
 
 .carre {
 	background-color: var(--colordarkblue);
-	min-block-size: 44px;
+	min-height: 44px;
+	min-width: 44px;
 	margin: 2vh;
 	padding: 2vh;
 	border: 1px solid whitesmoke;

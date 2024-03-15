@@ -25,7 +25,6 @@ a {
 }
 
 .bodycontainer {
-	background-color: var(--colorblue);
 	width: 100%;
 	height: 100%;
 	display: flex;
@@ -87,9 +86,9 @@ a {
 }
 
 .bodycontent {
+	background-color: var(--colorblue);
 	padding: var(--height20) 5vw var(--height5);
 	width: 100%;
-	height: 100%;
 	display: flex;
 	flex-flow: row wrap;
 	align-items: start;

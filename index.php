@@ -24,9 +24,12 @@ include ('lang/FR.php');
 				<p>Le site est en cours de création, et il y a du boulot !<br />
 				Revenez dans quelques temps, et vous pourrez admirer le travail.</p>
 				<form action="authentification.php" method="post">
-					Nom d'utilisateur : <input type="text" name="username" /><br />
-					Mot de passe : <input type="password" name="password" /><br />
-					<input type="reset" value="Effacer" /><input type="submit" value="Se connecter" />
+					<fieldset>
+						<legend>Connexion</legend>
+						<div><label for="username">Nom d'utilisateur :</label><input type="text" name="username" /></div>
+						<div><label for="password">Mot de passe :</label><input type="password" name="password" /></div>
+						<div><input type="reset" value="Effacer" /><input type="submit" value="Se connecter" /></div>
+					</fieldset>
 				</form>
 			</div>
 		</div>

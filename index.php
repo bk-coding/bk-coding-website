@@ -17,14 +17,12 @@ include ('lang/FR.php');
 		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
 	<body>
-		<div class="boitecentre">
+		<div class="bodycontainer">
 			<div class="infocreation">
 				<h1><?= $lang["sitename"]; ?></h1>
 				<h3>Hello, world!</h3>
-				<p>
-				Le site est en cours de création, et il y a du boulot !<br />
-				Revenez dans quelques temps, et vous pourrez admirer le travail.
-				</p>
+				<p>Le site est en cours de création, et il y a du boulot !<br />
+				Revenez dans quelques temps, et vous pourrez admirer le travail.</p>
 				<form action="authentification.php" method="post">
 					Nom d'utilisateur : <input type="text" name="username" /><br />
 					Mot de passe : <input type="password" name="password" /><br />

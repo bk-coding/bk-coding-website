@@ -13,6 +13,7 @@ html,
 body {
 	margin: 0;
 	background-color: var(--colorblack);
+	font-family: 'Share Tech', sans-serif;
 	color: white;
 	width: 100%;
 	height: 100%;
@@ -32,17 +33,8 @@ a {
 	align-items: center;
 }
 
-.boitecentre {
-	height: 100%;
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
 .infocreation {
 	background-color: var(--colordarkblue);
-	font-family: 'Share Tech', sans-serif;
 	text-align: center;
 	border: dashed yellow;
 	padding: 5%;
@@ -52,7 +44,6 @@ a {
 .toolbar {
 	width: 100%;
 	background-color: var(--colordarkblue);
-	font-family: 'Share Tech', sans-serif;
 	position: fixed;
 	display: flex;
 	align-items: center;

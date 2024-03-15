@@ -88,7 +88,7 @@ a {
 	align-items: center;
 }
 
-.carre {
+.bouton {
 	background-color: var(--colordarkblue);
 	min-height: 44px;
 	min-width: 44px;

@@ -1,7 +1,8 @@
 <?php
 session_start();
 if (!$_SESSION['loggedin']) {
-    exit("Vous ne pouvez pas avoir accès à cette page car vous n'êtes pas connecté.");  
+	header("Location: index.php");
+    exit;  
 }
 $username = $_SESSION['username'];
 include ('lang/FR.php');

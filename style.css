@@ -106,8 +106,8 @@ a {
 }
 
 .infos {
-	width: 100%;
-	height: auto;
+	margin: var(--height20) 5vw var(--height5);
+	display: block;
 }
 
 .footer {

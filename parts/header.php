@@ -7,6 +7,7 @@ if (!$_SESSION['loggedin']) {
 $username = $_SESSION['username'];
 include ('lang/FR.php');
 $titlea = $lang[$title];
+$message = $lang['message1'].$username.$lang['message2'];
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -27,6 +28,6 @@ $titlea = $lang[$title];
         <div class="bodycontainer">
             <div class="header toolbar">
 				<div class="logo"><a href="https://bk-coding.net"><img src="img/logo.webp" /></a></div>
-				<?php echo "<div class=\"message\"> Bienvenue " . $username . " ! Vous êtes connecté.</div>"; ?>
+				<div class="message"><?= $message; ?></div>
 				<div class="menu"><a href="deconnexion.php"><i class="fa-solid fa-power-off"></i></a></div>
 			</div>

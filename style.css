@@ -92,8 +92,8 @@ a {
 
 .bouton {
 	background-color: var(--colordarkblue);
-	min-height: 44px;
-	min-width: 44px;
+	height: 100px;
+	width: 100px;
 	margin: 2vh 2vw;
 	padding: 2vh 2vw;
 	border: 1px solid whitesmoke;

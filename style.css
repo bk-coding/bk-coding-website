@@ -96,6 +96,7 @@ a {
 .category {
 	border: 1px solid whitesmoke;
 	border-radius: 10px;
+	margin: 2vh 2vw;
 	padding: 2vh 2vw;
 	display: flex;
 	align-items: center;

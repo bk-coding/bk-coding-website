@@ -89,8 +89,8 @@ a {
 .bodycontent {
 	margin: var(--height20) 5vw var(--height5);
 	display: flex;
-	align-items: flex-start;
-	justify-content: space-around;
+	align-items: start;
+	flex-flow: row wrap;
 }
 
 .category {

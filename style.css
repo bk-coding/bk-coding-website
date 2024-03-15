@@ -78,7 +78,9 @@ a {
 
 .menu {
 	margin-right: 5vw;
-
+}
+.menu a {
+	margin: 2vh 2vw;
 }
 
 .bodycontent {

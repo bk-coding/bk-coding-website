@@ -32,5 +32,8 @@ $message = $lang['message1'].$username.$lang['message2'];
             <div class="header toolbar">
 				<div class="logo"><a href="https://bk-coding.net"><img src="img/logo.webp" /></a></div>
 				<div class="message"><?= $message; ?></div>
-				<div class="menu"><a href="deconnexion.php"><i class="fa-solid fa-power-off"></i><br />Déconnexion</a></div>
+				<div class="menu">
+					<a href="deconnexion.php"><i class="fa-solid fa-power-off"></i></a>
+					<a href="#"><i class="fa-solid fa-circle-info"></i></a>
+				</div>
 			</div>

@@ -4,7 +4,7 @@ include('parts/header.php'); ?>
 <div class="bodycontent">
     <fieldset class="category">
         <legend>Applis</legend>
-        <a name="divers" href="#"><div class="bouton"><div><i class="fa-solid fa-snowflake"></i></div><div>Divers</div></div></a>
+        <a name="divers" href="https://hpanel.hostinger.com/websites/bk-coding.net"><div class="bouton"><div><i class="fa-solid fa-server"></i></div><div>Hostinger</div></div></a>
         <a name="autres" href="https://github.com/bk-coding"><div class="bouton"><div><i class="fa-brands fa-github"></i></div><div>GitHub</div></div></a>
     </fieldset>
     <fieldset class="category">

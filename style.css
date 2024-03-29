@@ -129,3 +129,7 @@ a {
 	align-content: space-around;
 	text-align: center;
 }
+
+.champ {
+	margin: 10px;
+}

@@ -7,7 +7,7 @@ if (!$_SESSION['loggedin']){
 $username = $_SESSION['username'];
 include ('lang/FR.php');
 $titlea = $lang[$title];
-$message = $lang['message1'].$username.$lang['message2'];
+$message = $lang['message1.1'].$username.$lang['message1.2'];
 ?>
 <!DOCTYPE html>
 <html lang="fr">

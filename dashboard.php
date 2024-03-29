@@ -10,8 +10,8 @@ include('parts/header.php'); ?>
         <a name="mdn" target="_blank" href="https://developer.mozilla.org/fr/docs/Web#r%C3%A9f%C3%A9rences_des_technologies_web"><div class="bouton"><div><i class="fa-solid fa-book-bookmark"></i></div><div>MDN</div></div></a>
     </fieldset>
     <fieldset class="category">
-        <legend>Autres</legend>
-        <p>lorem ipsum</p>
+        <legend>Clients</legend>
+        <a name="banquet" target="_blank" href="https://devsite.provins-banquet-medieval.com/wp-admin"><div class="bouton"><div><i class="fa-solid fa-book-bookmark"><\i><\div><div>Banquet des Troubadours<\div><\div><\a>
     </fieldset>
 </div>
 

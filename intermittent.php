@@ -6,13 +6,13 @@ require_once('dbconfig.php');
 // Traitement du formulaire
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Ajout ou mise à jour d'un cachet
-    if (isset($_POST['date_debut'], $_POST['date_fin'], $_POST['montant_brut'], $_POST['montant_net'], $_POST['description'])) {
+    if (isset($_POST['date_debut'], $_POST['date_fin'], $_POST['nombre_cachet'], $_POST['montant_brut'], $_POST['montant_net'], $_POST['description'])) {
         if ($_POST['id'] == 0) { // Ajout
-            $stmt = $pdo->prepare("INSERT INTO cachets (date_debut, date_fin, montant_brut, montant_net, description) VALUES (?, ?, ?, ?, ?)");
-            $stmt->execute([$_POST['date_debut'], $_POST['date_fin'], $_POST['montant_brut'], $_POST['montant_net'], $_POST['description']]);
+            $stmt = $pdo->prepare("INSERT INTO cachets (date_debut, date_fin, nombre_cachet, montant_brut, montant_net, description) VALUES (?, ?, ?, ?, ?, ?)");
+            $stmt->execute([$_POST['date_debut'], $_POST['date_fin'], $_POST['nombre_cachet'], $_POST['montant_brut'], $_POST['montant_net'], $_POST['description']]);
         } else { // Mise à jour
-            $stmt = $pdo->prepare("UPDATE cachets SET date_debut = ?, date_fin = ?, montant_brut = ?, montant_net = ?, description = ? WHERE id = ?");
-            $stmt->execute([$_POST['date_debut'], $_POST['date_fin'], $_POST['montant_brut'], $_POST['montant_net'], $_POST['description'], $_POST['id']]);
+            $stmt = $pdo->prepare("UPDATE cachets SET date_debut = ?, date_fin = ?, nombre_cachet = ?, montant_brut = ?, montant_net = ?, description = ? WHERE id = ?");
+            $stmt->execute([$_POST['date_debut'], $_POST['date_fin'], $_POST['nombre_cachet'], $_POST['montant_brut'], $_POST['montant_net'], $_POST['description'], $_POST['id']]);
         }
     }
 
@@ -37,6 +37,8 @@ $cachets = $pdo->query("SELECT * FROM cachets")->fetchAll();
         <input type="date" name="date_debut" id="date_debut" required>
         <label for="date_fin">Date fin:</label>
         <input type="date" name="date_fin" id="date_fin" required>
+        <label for="nombre_cachet">Nombre de cachet:</label>
+        <input type="number" name="nombre_cachet" id="nombre_cachet" required>
         <label for="montant_brut">Montant Brut:</label>
         <input type="number" name="montant_brut" id="montant_brut" required>
         <label for="montant_net">Montant Net:</label>
@@ -53,6 +55,7 @@ $cachets = $pdo->query("SELECT * FROM cachets")->fetchAll();
     <tr>
         <th>Date Début</th>
         <th>Date Fin</th>
+        <th>Nombre de cachet</th>
         <th>Montant Brut</th>
         <th>Montant Net</th>
         <th>Description</th>
@@ -62,6 +65,7 @@ $cachets = $pdo->query("SELECT * FROM cachets")->fetchAll();
     <tr>
         <td><?php echo htmlspecialchars($cachet['date_debut']); ?></td>
         <td><?php echo htmlspecialchars($cachet['date_fin']); ?></td>
+        <td><?php echo htmlspecialchars($cachet['nombre_cachet']); ?></td>
         <td><?php echo htmlspecialchars($cachet['montant_brut']); ?></td>
         <td><?php echo htmlspecialchars($cachet['montant_net']); ?></td>
         <td><?php echo htmlspecialchars($cachet['description']); ?></td>
@@ -80,11 +84,13 @@ $cachets = $pdo->query("SELECT * FROM cachets")->fetchAll();
 
 <!-- Calcul et affichage des totaux -->
 <?php
+$totalNombreCachet = array_sum(array_column($cachets, 'nombre_cachet'));
 $totalBrut = array_sum(array_column($cachets, 'montant_brut'));
 $totalNet = array_sum(array_column($cachets, 'montant_net'));
 ?>
 <fieldset class="category">
     <legend>Totaux</legend>
+<p>Total de cachet: <?php echo $totalNombreCachet; ?></p>
 <p>Total Brut: <?php echo $totalBrut; ?></p>
 <p>Total Net: <?php echo $totalNet; ?></p>
 </fieldset>
@@ -96,6 +102,7 @@ function editCachet(cachet) {
     document.getElementById('cachetId').value = cachet.id;
     document.getElementById('date_debut').value = cachet.date_debut;
     document.getElementById('date_fin').value = cachet.date_fin;
+    document.getElementById('nombre_cachet').value = cachet.nombre_cachet;
     document.getElementById('montant_brut').value = cachet.montant_brut;
     document.getElementById('montant_net').value = cachet.montant_net;
     document.getElementById('description').value = cachet.description;

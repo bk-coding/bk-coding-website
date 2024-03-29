@@ -3,6 +3,7 @@ $title = "intermittence";
 include('parts/header.php');
 require_once('dbconfig.php');
 $tableuser = $username . "-cachets";
+echo $tableuser;
 
 // Traitement du formulaire
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -41,7 +42,8 @@ $cachets = $pdo->query($query)->fetchAll();
             <div><label for="nombre_heure"> Nombre d'heures : </label><input type="number" name="nombre_heure" id="nombre_heure" required></div>
             <div><label for="montant_brut"> Montant Brut : </label><input type="number" name="montant_brut" id="montant_brut" required></div>
             <div><label for="montant_net"> Montant Net : </label><input type="number" name="montant_net" id="montant_net" required></div>
-            <div><label for="description"> Description : </label><input type="text" name="description" id="description"></div><br />
+            <div><label for="description"> Description : </label><input type="text" name="description" id="description"></div>
+            <br />
             <div style="display:block; text-align:center;"><input type="submit" value="Enregistrer"></div>
         </form>
     </fieldset>

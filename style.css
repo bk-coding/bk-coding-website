@@ -15,7 +15,7 @@
 html,
 body {
 	margin: 0;
-	background-color: var(--colorblack);
+	background-color: var(--colorblue);
 	font-family: 'Share Tech', sans-serif;
 	color: white;
 	width: 100%;
@@ -92,13 +92,10 @@ a {
 }
 
 .bodycontent {
-	background-color: var(--colorblue);
 	padding: var(--height20) 5vw var(--height5);
 	width: 100%;
-/* 	display: flex;
-	flex-flow: row wrap;
-	justify-content: space-around;
- */}
+	overflow: auto;
+}
 
 .category {
 	border-radius: 10px;

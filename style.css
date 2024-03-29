@@ -131,8 +131,10 @@ a {
 }
 
 .tableaucachet {
-	width: 100%;
+	text-align: center;
 }
-.tableaucachet th, .tableaucachet td {
-	padding: 20px;
+
+.tableaucachet th,
+.tableaucachet td {
+	padding: 10px;
 }

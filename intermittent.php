@@ -30,7 +30,7 @@ $cachets = $pdo->query("SELECT * FROM cachets")->fetchAll();
 <div class="bodycontent">
 <!-- Formulaire pour l'ajout et l'édition -->
 <fieldset class="category">
-    <legend>Ajouter une date</legend>
+    <legend>Ajouter/Editer une date</legend>
     <form method="post">
         <input type="hidden" name="id" value="0" id="cachetId">
         <label for="date_debut">Date début : </label><input type="date" name="date_debut" id="date_debut" required>
@@ -46,15 +46,18 @@ $cachets = $pdo->query("SELECT * FROM cachets")->fetchAll();
 <fieldset class="category">
     <legend>Tableau des cachets</legend>
 <table class="tableaucachet">
-    <tr>
-        <th>Date Début</th>
-        <th>Date Fin</th>
-        <th>Nombre de cachet</th>
-        <th>Montant Brut</th>
-        <th>Montant Net</th>
-        <th>Description</th>
-        <th>Actions</th>
-    </tr>
+    <thead>
+        <tr>
+            <th>Date Début</th>
+            <th>Date Fin</th>
+            <th>Nombre de cachet</th>
+            <th>Montant Brut</th>
+            <th>Montant Net</th>
+            <th>Description</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
     <?php foreach ($cachets as $cachet): ?>
     <tr>
         <td><?php echo htmlspecialchars($cachet['date_debut']); ?></td>
@@ -73,6 +76,7 @@ $cachets = $pdo->query("SELECT * FROM cachets")->fetchAll();
         </td>
     </tr>
     <?php endforeach; ?>
+    </tbody>
 </table>
 </fieldset>
 

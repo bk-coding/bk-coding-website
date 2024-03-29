@@ -127,6 +127,7 @@ a {
 }
 
 .categoryajout {
+	background-color: var(--colordarkblue);
 	border-radius: 10px;
 	margin: 2vh 2vw;
 	padding: 2vh 2vw;

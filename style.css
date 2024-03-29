@@ -130,6 +130,9 @@ a {
 	text-align: center;
 }
 
-.champ {
-	margin: 10px;
+.tableaucachet {
+	width: 100%;
+}
+.tableaucachet th, .tableaucachet td {
+	padding: 20px;
 }

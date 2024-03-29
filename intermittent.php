@@ -1,9 +1,9 @@
 <?php
 $title = "intermittence";
 include('parts/header.php');
-require_once('dbconfig.php');
 $tableuser = $username . "-cachets";
-echo $tableuser;
+
+require_once('dbconfig.php');
 
 // Traitement du formulaire
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {

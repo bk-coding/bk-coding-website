@@ -141,7 +141,8 @@ a {
 .tableaucachet {
 	table-layout: auto;
 	width: 100%;
-	border: 1px whitesmoke;
+	border: 1px solid whitesmoke;
+	border-collapse: collapse;
 
 }
 

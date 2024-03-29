@@ -88,9 +88,22 @@ $totalNet = array_sum(array_column($cachets, 'montant_net'));
 ?>
 <fieldset class="categorytableau">
     <legend>Totaux</legend>
-<p>Total de cachet: <?php echo $totalNombreCachet; ?></p>
-<p>Total Brut: <?php echo $totalBrut; ?></p>
-<p>Total Net: <?php echo $totalNet; ?></p>
+    <table class="tableaucachet">
+    <thead>
+        <tr>
+            <th>Total de cachet</th>
+            <th>Total Brut</th>
+            <th>Total Net</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><?php echo $totalNombreCachet; ?></td>
+            <td><?php echo $totalBrut; ?></td>
+            <td><?php echo $totalNet; ?></td>
+        </tr>
+    </tbody>
+    </table>
 </fieldset>
 
 </div>

@@ -15,7 +15,7 @@ include('parts/header.php'); ?>
     </fieldset>
     <fieldset class="category">
         <legend>Outils</legend>
-        <a name="intermittent" target="_self" href="https://devsite.provins-banquet-medieval.com/intermittent.php"><div class="bouton"><div><i class="fa-solid fa-book-bookmark"></i></div><div>Intermittence</div></div></a>
+        <a name="intermittent" target="_self" href="intermittent.php"><div class="bouton"><div><i class="fa-solid fa-book-bookmark"></i></div><div>Intermittence</div></div></a>
     </fieldset>
 </div>
 

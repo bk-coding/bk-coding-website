@@ -138,6 +138,13 @@ a {
 	text-align: center;
 }
 
+.tableaucachet {
+	table-layout: auto;
+	width: 100%;
+	border: 1px whitesmoke;
+
+}
+
 .tableaucachet th, .tableaucachet td {
 	padding: 10px;
 }

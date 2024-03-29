@@ -29,22 +29,26 @@ $cachets = $pdo->query("SELECT * FROM cachets")->fetchAll();
 ?>
 <div class="bodycontent">
 <!-- Formulaire pour l'ajout et l'édition -->
-<form method="post">
-    <input type="hidden" name="id" value="0" id="cachetId">
-    <label for="date_debut">Date début:</label>
-    <input type="date" name="date_debut" id="date_debut" required>
-    <label for="date_fin">Date fin:</label>
-    <input type="date" name="date_fin" id="date_fin" required>
-    <label for="montant_brut">Montant Brut:</label>
-    <input type="number" name="montant_brut" id="montant_brut" required>
-    <label for="montant_net">Montant Net:</label>
-    <input type="number" name="montant_net" id="montant_net" required>
-    <label for="description">Description:</label>
-    <input type="text" name="description" id="description">
-    <input type="submit" value="Soumettre">
-</form>
-
+<fieldset class="category">
+    <legend>Ajouter une date</legend>
+    <form method="post">
+        <input type="hidden" name="id" value="0" id="cachetId">
+        <label for="date_debut">Date début:</label>
+        <input type="date" name="date_debut" id="date_debut" required>
+        <label for="date_fin">Date fin:</label>
+        <input type="date" name="date_fin" id="date_fin" required>
+        <label for="montant_brut">Montant Brut:</label>
+        <input type="number" name="montant_brut" id="montant_brut" required>
+        <label for="montant_net">Montant Net:</label>
+        <input type="number" name="montant_net" id="montant_net" required>
+        <label for="description">Description:</label>
+        <input type="text" name="description" id="description">
+        <input type="submit" value="Soumettre">
+    </form>
+</fieldset>
 <!-- Tableau des cachets -->
+<fieldset class="category">
+    <legend>Tableau des cachets</legend>
 <table>
     <tr>
         <th>Date Début</th>
@@ -72,14 +76,18 @@ $cachets = $pdo->query("SELECT * FROM cachets")->fetchAll();
     </tr>
     <?php endforeach; ?>
 </table>
+</fieldset>
 
 <!-- Calcul et affichage des totaux -->
 <?php
 $totalBrut = array_sum(array_column($cachets, 'montant_brut'));
 $totalNet = array_sum(array_column($cachets, 'montant_net'));
 ?>
+<fieldset class="category">
+    <legend>Totaux</legend>
 <p>Total Brut: <?php echo $totalBrut; ?></p>
 <p>Total Net: <?php echo $totalNet; ?></p>
+</fieldset>
 
 </div>
 <!-- JavaScript pour remplir le formulaire en mode édition -->

@@ -130,11 +130,10 @@ a {
 	text-align: center;
 }
 
-.tableaucachet {
+.categorytableau {
+	border-radius: 10px;
+	margin: 2vh 2vw;
+	padding: 2vh 2vw;
+	display: block;
 	text-align: center;
-}
-
-.tableaucachet th,
-.tableaucachet td {
-	padding: 10px;
 }

@@ -43,7 +43,7 @@ $cachets = $pdo->query("SELECT * FROM cachets")->fetchAll();
     </form>
 </fieldset>
 <!-- Tableau des cachets -->
-<fieldset class="category">
+<fieldset class="categorytableau">
     <legend>Tableau des cachets</legend>
 <table class="tableaucachet">
     <thead>
@@ -86,7 +86,7 @@ $totalNombreCachet = array_sum(array_column($cachets, 'nombre_cachet'));
 $totalBrut = array_sum(array_column($cachets, 'montant_brut'));
 $totalNet = array_sum(array_column($cachets, 'montant_net'));
 ?>
-<fieldset class="category">
+<fieldset class="categorytableau">
     <legend>Totaux</legend>
 <p>Total de cachet: <?php echo $totalNombreCachet; ?></p>
 <p>Total Brut: <?php echo $totalBrut; ?></p>

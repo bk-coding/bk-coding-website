@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 $cachets = $pdo->query("SELECT * FROM cachets")->fetchAll();
 
 ?>
-
+<div class="bodycontent">
 <!-- Formulaire pour l'ajout et l'édition -->
 <form method="post">
     <input type="hidden" name="id" value="0" id="cachetId">
@@ -81,6 +81,7 @@ $totalNet = array_sum(array_column($cachets, 'montant_net'));
 <p>Total Brut: <?php echo $totalBrut; ?></p>
 <p>Total Net: <?php echo $totalNet; ?></p>
 
+</div>
 <!-- JavaScript pour remplir le formulaire en mode édition -->
 <script>
 function editCachet(cachet) {

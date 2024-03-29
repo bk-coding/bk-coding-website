@@ -141,9 +141,7 @@ a {
 .tableaucachet {
 	table-layout: auto;
 	width: 100%;
-	border: 1px solid whitesmoke;
 	border-collapse: collapse;
-
 }
 
 .tableaucachet thead tr {
@@ -152,4 +150,5 @@ a {
 
 .tableaucachet th, .tableaucachet td {
 	padding: 10px;
+	border: 1px solid whitesmoke;
 }

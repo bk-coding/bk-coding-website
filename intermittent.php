@@ -25,7 +25,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 
 // Récupération des cachets pour affichage
-$cachets = $pdo->query("SELECT * FROM " . $tableuser)->fetchAll();
+$query = "SELECT * FROM " . $tableuser;
+$cachets = $pdo->query($query)->fetchAll();
 
 ?>
 <div class="bodycontent">

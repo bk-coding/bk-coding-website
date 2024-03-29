@@ -2,32 +2,31 @@
 $title = "intermittence";
 include('parts/header.php');
 $tableuser = $username . "-cachets";
-echo $tableuser;
+
 require_once('dbconfig.php');
-echo $tableuser;
+
 // Traitement du formulaire
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Ajout ou mise à jour d'un cachet
     if (isset($_POST['date_debut'], $_POST['date_fin'], $_POST['nombre_cachet'], $_POST['nombre_heure'], $_POST['montant_brut'], $_POST['montant_net'], $_POST['description'])) {
         if ($_POST['id'] == 0) { // Ajout
-            $stmt = $pdo->prepare("INSERT INTO " . $tableuser . " (date_debut, date_fin, nombre_cachet, nombre_heure, montant_brut, montant_net, description) VALUES (?, ?, ?, ?, ?, ?, ?)");
+            $stmt = $pdo->prepare("INSERT INTO $tableuser (date_debut, date_fin, nombre_cachet, nombre_heure, montant_brut, montant_net, description) VALUES (?, ?, ?, ?, ?, ?, ?)");
             $stmt->execute([$_POST['date_debut'], $_POST['date_fin'], $_POST['nombre_cachet'], $_POST['nombre_heure'], $_POST['montant_brut'], $_POST['montant_net'], $_POST['description']]);
         } else { // Mise à jour
-            $stmt = $pdo->prepare("UPDATE " . $tableuser . " SET date_debut = ?, date_fin = ?, nombre_cachet = ?, nombre_heure = ?, montant_brut = ?, montant_net = ?, description = ? WHERE id = ?");
+            $stmt = $pdo->prepare("UPDATE $tableuser SET date_debut = ?, date_fin = ?, nombre_cachet = ?, nombre_heure = ?, montant_brut = ?, montant_net = ?, description = ? WHERE id = ?");
             $stmt->execute([$_POST['date_debut'], $_POST['date_fin'], $_POST['nombre_cachet'], $_POST['nombre_heure'], $_POST['montant_brut'], $_POST['montant_net'], $_POST['description'], $_POST['id']]);
         }
     }
 
     // Suppression d'un cachet
     if (isset($_POST['delete']) && $_POST['id'] > 0) {
-        $stmt = $pdo->prepare("DELETE FROM " . $tableuser . " WHERE id = ?");
+        $stmt = $pdo->prepare("DELETE FROM $tableuser WHERE id = ?");
         $stmt->execute([$_POST['id']]);
     }
 }
 
 // Récupération des cachets pour affichage
-$query = "SELECT * FROM " . $tableuser;
-$cachets = $pdo->query($query)->fetchAll();
+$cachets = $pdo->query("SELECT * FROM $tableuser")->fetchAll();
 
 ?>
 <div class="bodycontent">

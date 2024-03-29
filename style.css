@@ -95,10 +95,10 @@ a {
 	background-color: var(--colorblue);
 	padding: var(--height20) 5vw var(--height5);
 	width: 100%;
-	display: flex;
+/* 	display: flex;
 	flex-flow: row wrap;
 	justify-content: space-around;
-}
+ */}
 
 .category {
 	border-radius: 10px;

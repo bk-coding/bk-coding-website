@@ -39,7 +39,7 @@ $cachets = $pdo->query("SELECT * FROM cachets")->fetchAll();
         <div><label for="montant_brut"> Montant Brut : </label><input type="number" name="montant_brut" id="montant_brut" required></div>
         <div><label for="montant_net"> Montant Net : </label><input type="number" name="montant_net" id="montant_net" required></div>
         <div><label for="description"> Description : </label><input type="text" name="description" id="description"></div><br />
-        <div style="display: block;"><input type="submit" value="Enregistrer"></div>
+        <div style="display:block; text-align:center;"><input type="submit" value="Enregistrer"></div>
     </form>
 </fieldset>
 <!-- Tableau des cachets -->

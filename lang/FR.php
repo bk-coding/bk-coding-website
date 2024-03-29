@@ -6,7 +6,8 @@ $lang = array(
     "dashboard" => "Tableau de bord",
     "message1" => "Bienvenue ",
     "message2" => " ! Vous êtes connecté.",
-    "infos" => "Informations"
+    "infos" => "Informations",
+    "intermittence" => "Intermittence"
 );
 
 ?>

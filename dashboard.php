@@ -13,6 +13,10 @@ include('parts/header.php'); ?>
         <legend>Clients</legend>
         <a name="banquet" target="_blank" href="https://devsite.provins-banquet-medieval.com/wp-admin"><div class="bouton"><div><i class="fa-solid fa-book-bookmark"></i></div><div>Banquet des Troubadours</div></div></a>
     </fieldset>
+    <fieldset class="category">
+        <legend>Outils</legend>
+        <a name="intermittent" target="_self" href="https://devsite.provins-banquet-medieval.com/intermittent.php"><div class="bouton"><div><i class="fa-solid fa-book-bookmark"></i></div><div>Intermittence</div></div></a>
+    </fieldset>
 </div>
 
 <?php include('parts/footer.php'); ?>

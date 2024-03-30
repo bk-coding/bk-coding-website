@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 
 // Récupération des cachets pour affichage
-$stmt = $pdo->prepare("SELECT * FROM devcachets WHERE user = :user");
+$stmt = $pdo->prepare("SELECT * FROM devcachets WHERE user = :user ORDER BY date_debut");
 $stmt->bindValue(':user', $user);
 $stmt->execute();
 $cachets = $stmt->fetchAll();

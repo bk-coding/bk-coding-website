@@ -103,16 +103,16 @@ $cachets = $stmt->fetchAll();
         <table class="tableaucachet">
             <thead>
                 <tr>
-                    <th>Total de cachets</th>
-                    <th>Total d'heures</th>
+                    <th>Total en cachets</th>
+                    <th>Total en heures</th>
                     <th>Total Brut</th>
                     <th>Total Net</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td><?php echo $totalNombreHeure; ?></td>
                     <td><?php echo $totalNombreCachet; ?></td>
+                    <td><?php echo $totalNombreHeure; ?></td>
                     <td><?php echo $totalBrut; ?></td>
                     <td><?php echo $totalNet; ?></td>
                 </tr>

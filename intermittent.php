@@ -1,7 +1,7 @@
 <?php
 $title = "intermittence";
 include('parts/header.php');
-$tableuser = $username . "-cachets";
+$tableuser = $username . "cachets";
 
 require_once('dbconfig.php');
 

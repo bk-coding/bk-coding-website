@@ -26,7 +26,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 
 // Récupération des cachets pour affichage
-$cachets = $pdo->query("SELECT * FROM devcachets")->fetchAll();
+$stmt = $pdo->prepare("SELECT * FROM devcachets WHERE user = :user");
+$stmt->bindValue(':user', $user);
+$stmt->execute();
+$cachets = $stmt->fetchAll();
 
 ?>
 <div class="bodycontent">

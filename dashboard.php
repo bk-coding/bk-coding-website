@@ -16,6 +16,7 @@ include('parts/header.php'); ?>
     <fieldset class="category">
         <legend>Outils</legend>
         <a name="intermittent" target="_self" href="intermittent.php"><div class="bouton"><div><i class="fa-solid fa-clipboard-check"></i></div><div>Intermittence</div></div></a>
+        <a name="hashmdp" target="_self" href="hashmdp.php"><div class="bouton"><div><i class="fa-solid fa-clipboard-check"></i></div><div>HashMDP</div></div></a>
     </fieldset>
 </div>
 

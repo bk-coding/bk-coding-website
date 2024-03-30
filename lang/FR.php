@@ -7,7 +7,8 @@ $lang = array(
     "message1.1" => "Bienvenue ",
     "message1.2" => " ! Vous êtes connecté.",
     "infos" => "Informations",
-    "intermittence" => "Intermittence"
+    "intermittence" => "Intermittence",
+    "hashmdp" => "HashMDP"
 );
 
 ?>

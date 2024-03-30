@@ -29,9 +29,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 
 // Récupération des cachets pour affichage
-$stmt = $pdo->prepare("SELECT * FROM :tableuser");
-$stmt->bindValue('tableuser', $tableuser);
-$stmt->execute();
+$stmt = $pdo->prepare("SELECT * FROM ?");
+$stmt->execute([$tableuser]);
 $cachets = $stmt->fetchAll();
 
 ?>

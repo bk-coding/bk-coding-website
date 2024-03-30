@@ -69,8 +69,8 @@ $cachets = $stmt->fetchAll();
             <tbody>
                 <?php foreach ($cachets as $cachet) : ?>
                     <tr>
-                        <td><?php $date = date_create(htmlspecialchars($cachet['date_debut'])); echo date_format($date, "d/m/Y"); ?></td>
-                        <td><?php echo htmlspecialchars($cachet['date_fin']); ?></td>
+                        <td><?php $datedebut = date_create(htmlspecialchars($cachet['date_debut'])); echo date_format($datedebut, "d/m/Y"); ?></td>
+                        <td><?php $datefin = date_create(htmlspecialchars($cachet['date_fin'])); echo date_format($datefin, "d/m/Y"); ?></td>
                         <td><?php echo htmlspecialchars($cachet['nombre_cachet']); ?></td>
                         <td><?php echo htmlspecialchars($cachet['nombre_heure']); ?></td>
                         <td><?php echo htmlspecialchars($cachet['montant_brut']); ?></td>

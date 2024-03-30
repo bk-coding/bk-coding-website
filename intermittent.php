@@ -8,10 +8,10 @@ require_once('dbconfig.php');
 // Traitement du formulaire
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Ajout ou mise à jour d'un cachet
-    if (isset($_POST['date_debut'], $_POST['date_fin'], $_POST['nombre_cachet'], $_POST['nombre_heure'], $_POST['montant_brut'], $_POST['montant_net'], $_POST['description'])) {
+    if (isset($_POST['user'],$_POST['date_debut'], $_POST['date_fin'], $_POST['nombre_cachet'], $_POST['nombre_heure'], $_POST['montant_brut'], $_POST['montant_net'], $_POST['description'])) {
         if ($_POST['id'] == 0) { // Ajout
-            $stmt = $pdo->prepare("INSERT INTO devcachets (date_debut, date_fin, nombre_cachet, nombre_heure, montant_brut, montant_net, description) VALUES (?, ?, ?, ?, ?, ?, ?)");
-            $stmt->execute([$_POST['date_debut'], $_POST['date_fin'], $_POST['nombre_cachet'], $_POST['nombre_heure'], $_POST['montant_brut'], $_POST['montant_net'], $_POST['description']]);
+            $stmt = $pdo->prepare("INSERT INTO devcachets (user, date_debut, date_fin, nombre_cachet, nombre_heure, montant_brut, montant_net, description) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+            $stmt->execute([$_POST['user'], $_POST['date_debut'], $_POST['date_fin'], $_POST['nombre_cachet'], $_POST['nombre_heure'], $_POST['montant_brut'], $_POST['montant_net'], $_POST['description']]);
         } else { // Mise à jour
             $stmt = $pdo->prepare("UPDATE devcachets SET date_debut = ?, date_fin = ?, nombre_cachet = ?, nombre_heure = ?, montant_brut = ?, montant_net = ?, description = ? WHERE id = ?");
             $stmt->execute([$_POST['date_debut'], $_POST['date_fin'], $_POST['nombre_cachet'], $_POST['nombre_heure'], $_POST['montant_brut'], $_POST['montant_net'], $_POST['description'], $_POST['id']]);
@@ -38,6 +38,7 @@ $cachets = $stmt->fetchAll();
         <legend>Ajouter/Editer une date</legend>
         <form method="post">
             <input type="hidden" name="id" value="0" id="cachetId">
+            <input type="hidden" name="user" value="<?php echo $user; ?>" id="user">
             <div><label for="date_debut">Date début : </label><input type="date" name="date_debut" id="date_debut" required></div>
             <div><label for="date_fin"> Date fin : </label><input type="date" name="date_fin" id="date_fin" required></div>
             <div><label for="nombre_cachet"> Nombre de cachet : </label><input type="number" name="nombre_cachet" id="nombre_cachet" required></div>
@@ -79,6 +80,7 @@ $cachets = $stmt->fetchAll();
                             <button onclick="editCachet(<?php echo htmlspecialchars(json_encode($cachet)); ?>)">Éditer</button>
                             <form method="post" style="display:inline;">
                                 <input type="hidden" name="id" value="<?php echo $cachet['id']; ?>">
+                                <input type="hidden" name="user" value="<?php echo $cachet['user']; ?>">
                                 <input type="hidden" name="delete" value="1">
                                 <input type="submit" value="Supprimer">
                             </form>
@@ -125,6 +127,7 @@ $cachets = $stmt->fetchAll();
 <script>
     function editCachet(cachet) {
         document.getElementById('cachetId').value = cachet.id;
+        document.getElementById('user').value = cachet.user;
         document.getElementById('date_debut').value = cachet.date_debut;
         document.getElementById('date_fin').value = cachet.date_fin;
         document.getElementById('nombre_cachet').value = cachet.nombre_cachet;

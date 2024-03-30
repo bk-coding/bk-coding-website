@@ -43,6 +43,7 @@ $cachets = $stmt->fetchAll();
             <div><label for="date_fin"> Date fin : </label><input type="date" name="date_fin" id="date_fin" required></div>
             <div><label for="nombre_cachet"> Nombre de cachet : </label><input type="number" name="nombre_cachet" id="nombre_cachet" required></div>
             <div><label for="nombre_heure"> Nombre d'heures : </label><input type="number" name="nombre_heure" id="nombre_heure" required></div>
+            <br />
             <div><label for="montant_brut"> Montant Brut : </label><input type="number" name="montant_brut" id="montant_brut" required></div>
             <div><label for="montant_net"> Montant Net : </label><input type="number" name="montant_net" id="montant_net" required></div>
             <div><label for="description"> Description : </label><input type="text" name="description" id="description"></div>

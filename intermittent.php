@@ -1,7 +1,7 @@
 <?php
 $title = "intermittence";
 include('parts/header.php');
-$tableuser = $username . "cachets";
+$user = $username;
 
 require_once('dbconfig.php');
 
@@ -10,29 +10,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Ajout ou mise à jour d'un cachet
     if (isset($_POST['date_debut'], $_POST['date_fin'], $_POST['nombre_cachet'], $_POST['nombre_heure'], $_POST['montant_brut'], $_POST['montant_net'], $_POST['description'])) {
         if ($_POST['id'] == 0) { // Ajout
-            $stmt = $pdo->prepare("INSERT INTO :tableuser (date_debut, date_fin, nombre_cachet, nombre_heure, montant_brut, montant_net, description) VALUES (?, ?, ?, ?, ?, ?, ?)");
-            $stmt->bindParam(':tableuser', $tableuser);
+            $stmt = $pdo->prepare("INSERT INTO devcachets (date_debut, date_fin, nombre_cachet, nombre_heure, montant_brut, montant_net, description) VALUES (?, ?, ?, ?, ?, ?, ?)");
             $stmt->execute([$_POST['date_debut'], $_POST['date_fin'], $_POST['nombre_cachet'], $_POST['nombre_heure'], $_POST['montant_brut'], $_POST['montant_net'], $_POST['description']]);
         } else { // Mise à jour
-            $stmt = $pdo->prepare("UPDATE :tableuser SET date_debut = ?, date_fin = ?, nombre_cachet = ?, nombre_heure = ?, montant_brut = ?, montant_net = ?, description = ? WHERE id = ?");
-            $stmt->bindParam(':tableuser', $tableuser);
+            $stmt = $pdo->prepare("UPDATE devcachets SET date_debut = ?, date_fin = ?, nombre_cachet = ?, nombre_heure = ?, montant_brut = ?, montant_net = ?, description = ? WHERE id = ?");
             $stmt->execute([$_POST['date_debut'], $_POST['date_fin'], $_POST['nombre_cachet'], $_POST['nombre_heure'], $_POST['montant_brut'], $_POST['montant_net'], $_POST['description'], $_POST['id']]);
         }
     }
 
     // Suppression d'un cachet
     if (isset($_POST['delete']) && $_POST['id'] > 0) {
-        $stmt = $pdo->prepare("DELETE FROM :tableuser WHERE id = ?");
-        $stmt->bindParam(':tableuser', $tableuser);
+        $stmt = $pdo->prepare("DELETE FROM devcachets WHERE id = ?");
         $stmt->execute([$_POST['id']]);
     }
 }
 
 // Récupération des cachets pour affichage
-$stmt = $pdo->prepare("SELECT * FROM :tableuser");
-$stmt->bindParam(':tableuser', $tableuser);
-$stmt->execute();
-$cachets = $stmt->fetchAll();
+$cachets = $pdo->query("SELECT * FROM devcachets")->fetchAll();
 
 ?>
 <div class="bodycontent">

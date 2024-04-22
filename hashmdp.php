@@ -13,7 +13,7 @@ include('parts/header.php');
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST["password"];
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-    echo "Votre mot de passe haché est: " . $hashedPassword;
+    echo "<script>alert('Votre mot de passe haché est: " . $hashedPassword . "');</script>";
 }
 ?>
 

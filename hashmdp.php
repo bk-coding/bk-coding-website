@@ -5,9 +5,10 @@ include('parts/header.php');
 <div class="bodycontent">
 
 <?php
-$password = "Test";
+echo "Veuillez entrer votre mot de passe: ";
+$password = readline();
 $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-echo $hashedPassword;
+echo "Votre mot de passe haché est: " . $hashedPassword;
 ?>
 
 </div>

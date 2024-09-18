@@ -21,12 +21,14 @@ include('parts/header.php'); ?>
             ["name" => "banquet", "target" => "_blank", "href" => "https://devsite.provins-banquet-medieval.com/wp-admin", "icon" => "fa-book-bookmark", "label" => "Banquet des Troubadours"],
             ["name" => "cemasophro", "target" => "_blank", "href" => "https://cemasophro.com/wp-admin", "icon" => "fa-book-bookmark", "label" => "Cemasophro"]
         ],
-        "Outils" => [
-            ["name" => "intermittent", "target" => "_self", "href" => "intermittent.php", "icon" => "fa-clipboard-check", "label" => "Intermittence"],
+        "Outils Admin" => [
             ["name" => "hashmdp", "target" => "_self", "href" => "hashmdp.php", "icon" => "fa-clipboard-check", "label" => "HashMDP"]
         ],
+        "Outils" => [
+            ["name" => "intermittent", "target" => "_self", "href" => "intermittent.php", "icon" => "fa-clipboard-check", "label" => "Intermittence"]
+        ],
         "Autre" => [
-            ["name" => "logout", "target" => "_self", "href" => "deconnexion.php", "icon" => "fa-right-from-bracket", "label" => "Vous n'avez pas de role, veuillez contacter l'administrateur."]
+            ["name" => "logout", "target" => "_self", "href" => "deconnexion.php", "icon" => "fa-right-from-bracket", "label" => "Vous n'avez pas de rôle, veuillez contacter l'administrateur à cette adresse : dev@bk-coding.net"]
         ]
     ];
 
@@ -36,6 +38,7 @@ include('parts/header.php'); ?>
         $userSections = [
             "Applis" => $sections["Applis"],
             "Clients" => $sections["Clients"],
+            "Outils Admin" => $sections["Outils Admin"],
             "Outils" => $sections["Outils"]
         ];
     } elseif ($_SESSION['role'] === 'user') {

@@ -1,3 +1,9 @@
+<!--
+BK-Coding.net
+file: intermittent.php
+author: Bastien Kilian
+ -->
+
 <?php
 $title = "intermittence";
 include('parts/header.php');

@@ -1,3 +1,9 @@
+<!--
+BK-Coding.net
+file: lang/FR.php
+author: Bastien Kilian
+-->
+
 <?php
 
 $lang = array(

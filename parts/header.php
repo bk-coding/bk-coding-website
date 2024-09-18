@@ -1,3 +1,9 @@
+<!--
+BK-Coding.net
+file: parts/header.php
+author: Bastien Kilian
+ -->
+
 <?php
 session_start();
 if (!$_SESSION['loggedin']) {

@@ -1,3 +1,9 @@
+<!--
+BK-Coding.net
+file: functions.php
+author: Bastien Kilian
+ -->
+
 <?php
 
 function clean_input($data) {

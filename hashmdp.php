@@ -1,3 +1,9 @@
+<!--
+BK-Coding.net
+file: hashmdp.php
+author: Bastien Kilian
+ -->
+
 <?php
 $title = "hashmdp";
 include('parts/header.php');

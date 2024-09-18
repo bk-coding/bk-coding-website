@@ -1,3 +1,9 @@
+<!--
+BK-Coding.net
+file: dashboard.php
+author: Bastien Kilian
+ -->
+
 <?php 
 $title = "dashboard";
 include('parts/header.php'); ?>

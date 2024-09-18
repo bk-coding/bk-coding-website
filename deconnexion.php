@@ -1,3 +1,9 @@
+<!--
+BK-Coding.net
+file: deconnexion.php
+author: Bastien Kilian
+ -->
+
 <?php
 session_start(); // Démarrage de la session pour accéder aux variables de session
 

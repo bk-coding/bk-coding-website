@@ -1,3 +1,9 @@
+<!--
+BK-Coding.net
+file: authentification.php
+author: Bastien Kilian
+ -->
+
 <?php
     // Start a new session or reuse an existing one
 session_start();

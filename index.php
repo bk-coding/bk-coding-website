@@ -1,3 +1,9 @@
+<!--
+BK-Coding.net
+file: index.php
+author: Bastien Kilian
+ -->
+
 <?php
 session_start();
 if ($_SESSION['loggedin']){

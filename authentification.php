@@ -34,6 +34,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
                 // Set session variables to indicate that the user has logged in successfully
             $_SESSION['loggedin'] = true;
             $_SESSION['username'] = $username;
+            $_SESSION['role'] = $user['role'];
             // Rediriger l'utilisateur vers une autre page après la connexion réussie
             // header("Location: page_accueil.php");
             header("Location: dashboard.php");

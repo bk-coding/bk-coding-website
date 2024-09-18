@@ -24,10 +24,31 @@ include('parts/header.php'); ?>
         "Outils" => [
             ["name" => "intermittent", "target" => "_self", "href" => "intermittent.php", "icon" => "fa-clipboard-check", "label" => "Intermittence"],
             ["name" => "hashmdp", "target" => "_self", "href" => "hashmdp.php", "icon" => "fa-clipboard-check", "label" => "HashMDP"]
+        ],
+        "Autre" => [
+            ["name" => "logout", "target" => "_self", "href" => "deconnexion.php", "icon" => "fa-right-from-bracket", "label" => "Vous n'avez pas de role, veuillez contacter l'administrateur."]
         ]
     ];
 
-    foreach ($sections as $legend => $links) {
+    $userSections = [];
+
+    if ($_SESSION['role'] === 'admin') {
+        $userSections = [
+            "Applis" => $sections["Applis"],
+            "Clients" => $sections["Clients"],
+            "Outils" => $sections["Outils"]
+        ];
+    } elseif ($_SESSION['role'] === 'user') {
+        $userSections = [
+            "Outils" => $sections["Outils"]
+        ];
+    } else {
+        $userSections = [
+            "Autre" => $sections["Autre"]
+        ];
+    }
+
+    foreach ($userSections as $legend => $links) {
         echo '<fieldset class="category">';
         echo "<legend>$legend</legend>";
         foreach ($links as $link) {

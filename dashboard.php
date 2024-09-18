@@ -18,7 +18,8 @@ include('parts/header.php'); ?>
             ["name" => "mdn", "target" => "_blank", "href" => "https://developer.mozilla.org/fr/docs/Web#r%C3%A9f%C3%A9rences_des_technologies_web", "icon" => "fa-book-bookmark", "label" => "MDN"]
         ],
         "Clients" => [
-            ["name" => "banquet", "target" => "_blank", "href" => "https://devsite.provins-banquet-medieval.com/wp-admin", "icon" => "fa-book-bookmark", "label" => "Banquet des Troubadours"],
+            ["name" => "banquet1", "target" => "_blank", "href" => "https://devsite.provins-banquet-medieval.com/wp-admin", "icon" => "fa-book-bookmark", "label" => "Banquet des Troubadours (old)"],
+            ["name" => "banquet2", "target" => "_blank", "href" => "https://devsite.banquetdestroubadours.com/wp-admin", "icon" => "fa-book-bookmark", "label" => "Banquet des Troubadours (new)"],
             ["name" => "cemasophro", "target" => "_blank", "href" => "https://cemasophro.com/wp-admin", "icon" => "fa-book-bookmark", "label" => "Cemasophro"]
         ],
         "Outils Admin" => [

@@ -1,23 +1,39 @@
-<?php $title = "dashboard";
+<?php 
+$title = "dashboard";
 include('parts/header.php'); ?>
 
 <div class="bodycontent">
-    <fieldset class="category">
-        <legend>Applis</legend>
-        <a name="hostinger" target="_blank" href="https://hpanel.hostinger.com/websites/bk-coding.net"><div class="bouton"><div><i class="fa-solid fa-server"></i></div><div>Hostinger</div></div></a>
-        <a name="github" target="_blank" href="https://github.com/bk-coding"><div class="bouton"><div><i class="fa-brands fa-github"></i></div><div>GitHub</div></div></a>
-        <a name="fontawesome" target="_blank" href="https://fontawesome.com/search"><div class="bouton"><div><i class="fa-solid fa-font-awesome"></i></div><div>FontAwesome</div></div></a>
-        <a name="mdn" target="_blank" href="https://developer.mozilla.org/fr/docs/Web#r%C3%A9f%C3%A9rences_des_technologies_web"><div class="bouton"><div><i class="fa-solid fa-book-bookmark"></i></div><div>MDN</div></div></a>
-    </fieldset>
-    <fieldset class="category">
-        <legend>Clients</legend>
-        <a name="banquet" target="_blank" href="https://devsite.provins-banquet-medieval.com/wp-admin"><div class="bouton"><div><i class="fa-solid fa-book-bookmark"></i></div><div>Banquet des Troubadours</div></div></a>
-    </fieldset>
-    <fieldset class="category">
-        <legend>Outils</legend>
-        <a name="intermittent" target="_self" href="intermittent.php"><div class="bouton"><div><i class="fa-solid fa-clipboard-check"></i></div><div>Intermittence</div></div></a>
-        <a name="hashmdp" target="_self" href="hashmdp.php"><div class="bouton"><div><i class="fa-solid fa-clipboard-check"></i></div><div>HashMDP</div></div></a>
-    </fieldset>
+    <?php 
+    $sections = [
+        "Applis" => [
+            ["name" => "hostinger", "target" => "_blank", "href" => "https://hpanel.hostinger.com/websites/bk-coding.net", "icon" => "fa-server", "label" => "Hostinger"],
+            ["name" => "github", "target" => "_blank", "href" => "https://github.com/bk-coding", "icon" => "fa-github", "label" => "GitHub"],
+            ["name" => "fontawesome", "target" => "_blank", "href" => "https://fontawesome.com/search", "icon" => "fa-font-awesome", "label" => "FontAwesome"],
+            ["name" => "mdn", "target" => "_blank", "href" => "https://developer.mozilla.org/fr/docs/Web#r%C3%A9f%C3%A9rences_des_technologies_web", "icon" => "fa-book-bookmark", "label" => "MDN"]
+        ],
+        "Clients" => [
+            ["name" => "banquet", "target" => "_blank", "href" => "https://devsite.provins-banquet-medieval.com/wp-admin", "icon" => "fa-book-bookmark", "label" => "Banquet des Troubadours"],
+            ["name" => "cemasophro", "target" => "_blank", "href" => "https://cemasophro.com/wp-admin", "icon" => "fa-book-bookmark", "label" => "Cemasophro"]
+        ],
+        "Outils" => [
+            ["name" => "intermittent", "target" => "_self", "href" => "intermittent.php", "icon" => "fa-clipboard-check", "label" => "Intermittence"],
+            ["name" => "hashmdp", "target" => "_self", "href" => "hashmdp.php", "icon" => "fa-clipboard-check", "label" => "HashMDP"]
+        ]
+    ];
+
+    foreach ($sections as $legend => $links) {
+        echo '<fieldset class="category">';
+        echo "<legend>$legend</legend>";
+        foreach ($links as $link) {
+            echo '<a name="'.$link['name'].'" target="'.$link['target'].'" href="'.$link['href'].'">';
+            echo '<div class="bouton">';
+            echo '<div><i class="fa-solid '.$link['icon'].'"></i></div>';
+            echo '<div>'.$link['label'].'</div>';
+            echo '</div></a>';
+        }
+        echo '</fieldset>';
+    }
+    ?>
 </div>
 
 <?php include('parts/footer.php'); ?>

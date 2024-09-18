@@ -19,7 +19,7 @@ include('parts/header.php');
 if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST["password"])) {
     $password = $_POST["password"];
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-    echo "<script>alert('Votre mot de passe haché est : " . addslashes($hashedPassword) . "');</script>";
+    echo "<script>alert('Votre mot de passe haché est : " . json_encode($hashedPassword) . "');</script>";
 } else if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo "<script>alert('Veuillez entrer un mot de passe.');</script>";
 }

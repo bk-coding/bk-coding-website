@@ -1,26 +1,31 @@
 <?php
+    // Start a new session or reuse an existing one
 session_start();
 
+    // Include the functions file to make them available in this script
 include('functions.php');
 
+    // Require the database configuration file
 require_once('dbconfig.php');
 
-// Vérifie si les données du formulaire ont été soumises
+    // Check if the login form has been submitted
 if (isset($_POST['username']) && isset($_POST['password'])) {
-    $username = clean_input($_POST['username']);
-    $password = clean_input($_POST['password']);
-
     try {
-        // Préparation de la requête SQL pour récupérer l'utilisateur par son nom d'utilisateur
+            // Clean and prepare the input data for SQL injection prevention
+        $username = clean_input($_POST['username']);
+        $password = clean_input($_POST['password']);
+
+            // Prepare a SQL query to retrieve the user by their username
         $stmt = $pdo->prepare("SELECT * FROM users WHERE username = :username");
         $stmt->bindParam(':username', $username);
         $stmt->execute();
 
-        // Récupération de l'utilisateur
+            // Fetch the user from the database
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        // Vérification si l'utilisateur existe et si le mot de passe est correct
+            // Check if the user exists and if the password is correct
         if ($user && password_verify($password, $user['password'])) {
+                // Set session variables to indicate that the user has logged in successfully
             $_SESSION['loggedin'] = true;
             $_SESSION['username'] = $username;
             // Rediriger l'utilisateur vers une autre page après la connexion réussie
@@ -31,7 +36,8 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
             echo "Identifiants incorrects.";
         }
     } catch (PDOException $e) {
-        die("Erreur d'exécution de la requête : " . $e->getMessage());
+            // Catch any PDO exceptions and display an error message
+            echo "An error occurred: " . $e->getMessage();
     }
 }
 ?>

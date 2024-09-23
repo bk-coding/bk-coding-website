@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
 
-    // Suppression d'un cachet
+    // Suppression d'un lien
     if (isset($_POST['delete']) && $_POST['id'] > 0) {
         $stmt = $pdo->prepare("DELETE FROM sections WHERE id = ?");
         $stmt->execute([$_POST['id']]);
@@ -34,10 +34,12 @@ $liens = $stmt->fetchAll();
 
 ?>
 <div class="bodycontent">
-<!-- Formulaire pour l'ajout et l'édition -->
-<fieldset class="categoryajout">
-        <legend>Ajouter/Editer un lien au Dashboard</legend>
-        <form method="post">
+    <button onclick="afficheCat('liens')">Liens</button>
+    <div id="liens" style="display:none;">
+        <!-- Formulaire pour l'ajout et l'édition -->
+        <fieldset class="categoryajout">
+            <legend>Ajouter/Editer un lien au Dashboard</legend>
+            <form method="post">
             <input type="hidden" name="id" value="0" id="lienId">
             <div>
                 <label for="type_section"> Type de section : </label>
@@ -64,47 +66,51 @@ $liens = $stmt->fetchAll();
             <div><label for="titre_bouton"> Titre du bouton : </label><input type="text" name="titre_bouton" id="titre_bouton"></div>
             <br />
             <div style="display:block; text-align:center;"><input type="reset" value="Effacer"><input type="submit" value="Enregistrer"></div>
-        </form>
-    </fieldset>
-    <!-- Tableau des liens Outils Admin -->
-    <fieldset class="categorytableau">
-        <legend>Tableau des liens du Dashboard</legend>
-        <table class="tableaucachet">
-            <thead>
-                <tr>
-                    <th>Type de section</th>
-                    <th>Nom interne</th>
-                    <th>Cible</th>
-                    <th>Liens</th>
-                    <th>Icone</th>
-                    <th>Titre du bouton</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($liens as $lien) : ?>
+            </form>
+        </fieldset>
+        <!-- Tableau des liens Outils Admin -->
+        <fieldset class="categorytableau">
+            <legend>Tableau des liens du Dashboard</legend>
+            <table class="tableaucachet">
+                <thead>
                     <tr>
-                        <td><?php echo htmlspecialchars($lien['type_section']); ?></td>
-                        <td><?php echo htmlspecialchars($lien['nom_interne']); ?></td>
-                        <td><?php echo htmlspecialchars($lien['cible']); ?></td>
-                        <td><?php echo htmlspecialchars($lien['adresse_lien']); ?></td>
-                        <td><?php echo htmlspecialchars($lien['icon']); ?> <i class="fa-solid <?php echo htmlspecialchars($lien['icon']); ?>"></i></td>
-                        <td><?php echo htmlspecialchars($lien['titre_bouton']); ?></td>
-                        <td>
-                            <button onclick="editLien(<?php echo htmlspecialchars(json_encode($lien)); ?>)">Éditer</button>
+                        <th>Type de section</th>
+                        <th>Nom interne</th>
+                        <th>Cible</th>
+                        <th>Liens</th>
+                        <th>Icone</th>
+                        <th>Titre du bouton</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($liens as $lien) : ?>
+                        <tr>
+                            <td><?php echo htmlspecialchars($lien['type_section']); ?></td>
+                            <td><?php echo htmlspecialchars($lien['nom_interne']); ?></td>
+                            <td><?php echo htmlspecialchars($lien['cible']); ?></td>
+                            <td><?php echo htmlspecialchars($lien['adresse_lien']); ?></td>
+                            <td><?php echo htmlspecialchars($lien['icon']); ?> <i class="fa-solid <?php echo htmlspecialchars($lien['icon']); ?>"></i></td>
+                            <td><?php echo htmlspecialchars($lien['titre_bouton']); ?></td>
+                            <td><button onclick="editLien(<?php echo htmlspecialchars(json_encode($lien)); ?>)">Éditer</button>
                             <form method="post" style="display:inline;">
                                 <input type="hidden" name="id" value="<?php echo $lien['id']; ?>">
                                 <input type="hidden" name="delete" value="1">
                                 <input type="submit" value="Supprimer">
                             </form>
-                        </td>
-                    </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
-    </fieldset>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        </fieldset>
+    </div>
+                <div>
+                    <label for="adresse_lien"> Lien : </label>
+                    <input type="text" name="adresse_lien" id="adresse_lien" required>
 </div>
-    <script>
+
+<script>
     function editLien($lien) {
         document.getElementById('lienId').value = $lien.id;
         document.getElementById('type_section').value = $lien.type_section;
@@ -114,6 +120,14 @@ $liens = $stmt->fetchAll();
         document.getElementById('icon').value = $lien.icon;
         document.getElementById('titre_bouton').value = $lien.titre_bouton;
         }
-    </script>
+    function afficheCat(bouton) {
+        // Vérifie si l'élément existe
+        var element = document.getElementById(bouton);
+        if (element) {
+            // Change l'affichage en "block" ou en "none" selon son état actuel
+            element.style.display = (element.style.display === 'none' || element.style.display === '') ? 'block' : 'none';
+        }
+    }
+</script>
 
 <?php include('parts/footer.php'); ?>

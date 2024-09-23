@@ -66,6 +66,60 @@ include('parts/header.php'); ?>
         echo '</fieldset>';
     }
     ?>
+    <hr>
+    <?php
+    $stmtApplis = $pdo->prepare("SELECT * FROM sections WHERE type_section = ?");
+    $stmtApplis->execute('Applis');
+    $liensApplis = $stmtApplis->fetchAll();
+
+    $stmtClients = $pdo->prepare("SELECT * FROM sections WHERE type_section = ?");
+    $stmtClients->execute('Clients');
+    $lienClients = $stmtClients->fetchAll();
+
+    $stmtOutilsAdmin = $pdo->prepare("SELECT * FROM sections WHERE type_section = ?");
+    $stmtOutilsAdmin->execute('Outils Admin');
+    $lienOutilsAdmin = $stmtOutilsAdmin->fetchAll();
+
+    $stmtOutils = $pdo->prepare("SELECT * FROM sections WHERE type_section = ?");
+    $stmtOutils->execute('Outils');
+    $lienOutils = $stmtOutils->fetchAll();
+
+    $stmtAutre = $pdo->prepare("SELECT * FROM sections WHERE type_section = ?");
+    $stmtAutre->execute('Autre');
+    $lienAutre = $stmtAutre->fetchAll();
+
+    $userSections2 = [];
+
+    if ($_SESSION['role'] === 'admin') {
+        $userSections2 = [
+            "Applis" => $liensApplis,
+            "Clients" => $lienClients,
+            "Outils Admin" => $lienOutilsAdmin,
+            "Outils" => $lienOutils
+        ];
+    } elseif ($_SESSION['role'] === 'user') {
+        $userSections2 = [
+            "Outils" => $lienOutils
+        ];
+    } else {
+        $userSections2 = [
+            "Autre" => $lienAutre
+        ];
+    }
+
+    foreach ($userSections2 as $legend2 => $links2) {
+        echo '<fieldset class="category">';
+        echo "<legend>$legend2</legend>";
+        foreach ($links2 as $link2) {
+            echo '<a name="'.$link2['nom_interne'].'" target="'.$link2['cible'].'" href="'.$link2['adresse_lien'].'">';
+            echo '<div class="bouton">';
+            echo '<div><i class="fa-solid '.$link2['icon'].'"></i></div>';
+            echo '<div>'.$link2['titre_bouton'].'</div>';
+            echo '</div></a>';
+        }
+        echo '</fieldset>';
+    }
+    ?>
 </div>
 
 <?php include('parts/footer.php'); ?>

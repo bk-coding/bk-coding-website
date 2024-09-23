@@ -28,10 +28,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 
-$stmt = $pdo->prepare("SELECT * FROM sections WHERE type_section = :type_section ORDER BY id");
-$stmt->bindValue(':type_section', 'Outils Admin');
+$stmt = $pdo->prepare("SELECT * FROM sections ORDER BY id");
 $stmt->execute();
-$outilsadmin = $stmt->fetchAll();
+$liens = $stmt->fetchAll();
 
 ?>
 <div class="bodycontent">
@@ -40,7 +39,7 @@ $outilsadmin = $stmt->fetchAll();
         <legend>Ajouter/Editer un lien Outils Admin</legend>
         <form method="post">
             <input type="hidden" name="id" value="0" id="lienId">
-            <input type="hidden" name="type_section" value="Outils Admin" id="type_section">
+            <div><label for="type_section"> Type de section : </label><input type="text" name="type_section" id="type_section" required></div>
             <div><label for="nom_interne"> Nom interne : </label><input type="text" name="nom_interne" id="nom_interne" required></div>
             <div><label for="cible"> Cible : </label><input type="text" name="cible" id="cible" required></div>
             <div><label for="adresse_lien"> Lien : </label><input type="text" name="adresse_lien" id="adresse_lien" required></div>
@@ -56,6 +55,7 @@ $outilsadmin = $stmt->fetchAll();
         <table class="tableaucachet">
             <thead>
                 <tr>
+                    <th>Type de section</th>
                     <th>Nom interne</th>
                     <th>Cible</th>
                     <th>Liens</th>
@@ -65,18 +65,18 @@ $outilsadmin = $stmt->fetchAll();
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($outilsadmin as $lienoutilsadmin) : ?>
+                <?php foreach ($liens as $lien) : ?>
                     <tr>
-                        <td><?php echo htmlspecialchars($lienoutilsadmin['nom_interne']); ?></td>
-                        <td><?php echo htmlspecialchars($lienoutilsadmin['cible']); ?></td>
-                        <td><?php echo htmlspecialchars($lienoutilsadmin['adresse_lien']); ?></td>
-                        <td><?php echo htmlspecialchars($lienoutilsadmin['icon']); ?></td>
-                        <td><?php echo htmlspecialchars($lienoutilsadmin['titre_bouton']); ?></td>
+                        <td><?php echo htmlspecialchars($lien['type_section']); ?></td>
+                        <td><?php echo htmlspecialchars($lien['nom_interne']); ?></td>
+                        <td><?php echo htmlspecialchars($lien['cible']); ?></td>
+                        <td><?php echo htmlspecialchars($lien['adresse_lien']); ?></td>
+                        <td><?php echo htmlspecialchars($lien['icon']); ?></td>
+                        <td><?php echo htmlspecialchars($lien['titre_bouton']); ?></td>
                         <td>
-                            <button onclick="editLienOutilsAdmin(<?php echo htmlspecialchars(json_encode($lienoutilsadmin)); ?>)">Éditer</button>
+                            <button onclick="editLien(<?php echo htmlspecialchars(json_encode($lien)); ?>)">Éditer</button>
                             <form method="post" style="display:inline;">
-                                <input type="hidden" name="id" value="<?php echo $lienoutilsadmin['id']; ?>">
-                                <input type="hidden" name="type_section" value="<?php echo $lienoutilsadmin['type_section']; ?>">
+                                <input type="hidden" name="id" value="<?php echo $lien['id']; ?>">
                                 <input type="hidden" name="delete" value="1">
                                 <input type="submit" value="Supprimer">
                             </form>
@@ -88,14 +88,14 @@ $outilsadmin = $stmt->fetchAll();
     </fieldset>
 </div>
     <script>
-    function editLienOutilsAdmin($lienoutilsadmin) {
-        document.getElementById('lienId').value = $lienoutilsadmin.id;
-        document.getElementById('type_section').value = $lienoutilsadmin.type_section;
-        document.getElementById('nom_interne').value = $lienoutilsadmin.nom_interne;
-        document.getElementById('cible').value = $lienoutilsadmin.cible;
-        document.getElementById('adresse_lien').value = $lienoutilsadmin.adresse_lien;
-        document.getElementById('icon').value = $lienoutilsadmin.icon;
-        document.getElementById('titre_bouton').value = $lienoutilsadmin.titre_bouton;
+    function editLien($lien) {
+        document.getElementById('lienId').value = $lien.id;
+        document.getElementById('type_section').value = $lien.type_section;
+        document.getElementById('nom_interne').value = $lien.nom_interne;
+        document.getElementById('cible').value = $lien.cible;
+        document.getElementById('adresse_lien').value = $lien.adresse_lien;
+        document.getElementById('icon').value = $lien.icon;
+        document.getElementById('titre_bouton').value = $lien.titre_bouton;
         }
     </script>
 

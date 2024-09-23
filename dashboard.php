@@ -6,7 +6,9 @@ author: Bastien Kilian
 
 <?php 
 $title = "dashboard";
-include('parts/header.php'); ?>
+include('parts/header.php');
+require_once('dbconfig.php');
+?>
 
 <div class="bodycontent">
     <?php 

@@ -6,7 +6,15 @@ function editLien(lien) {
     document.getElementById('adresse_lien').value = lien.adresse_lien;
     document.getElementById('icon').value = lien.icon;
     document.getElementById('titre_bouton').value = lien.titre_bouton;
-    }
+}
+function editUser(utilisateur) {
+    document.getElementById('userId').value = utilisateur.id;
+    document.getElementById('username').value = utilisateur.username;
+    document.getElementById('password').value = utilisateur.password;
+    document.getElementById('email').value = utilisateur.email;
+    document.getElementById('role').value = utilisateur.role;
+}
+
 function afficheCat(bouton) {
     // Récupérer toutes les divs qui doivent être affichées
     var categories = ['catliens', 'catUsers']; 

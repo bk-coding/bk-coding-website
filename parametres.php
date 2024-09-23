@@ -88,7 +88,7 @@ $liens = $stmt->fetchAll();
                         <td><?php echo htmlspecialchars($lien['nom_interne']); ?></td>
                         <td><?php echo htmlspecialchars($lien['cible']); ?></td>
                         <td><?php echo htmlspecialchars($lien['adresse_lien']); ?></td>
-                        <td><?php echo htmlspecialchars($lien['icon']); ?></td>
+                        <td><?php echo htmlspecialchars($lien['icon']); ?> <i class="fa-solid <?php echo htmlspecialchars($lien['icon']); ?>"></i></td>
                         <td><?php echo htmlspecialchars($lien['titre_bouton']); ?></td>
                         <td>
                             <button onclick="editLien(<?php echo htmlspecialchars(json_encode($lien)); ?>)">Éditer</button>

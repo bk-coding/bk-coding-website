@@ -36,7 +36,7 @@ $liens = $stmt->fetchAll();
 <div class="bodycontent">
 <!-- Formulaire pour l'ajout et l'édition -->
 <fieldset class="categoryajout">
-        <legend>Ajouter/Editer un lien Outils Admin</legend>
+        <legend>Ajouter/Editer un lien du Dashboard</legend>
         <form method="post">
             <input type="hidden" name="id" value="0" id="lienId">
             <div><label for="type_section"> Type de section : </label><input type="text" name="type_section" id="type_section" required></div>
@@ -51,7 +51,7 @@ $liens = $stmt->fetchAll();
     </fieldset>
     <!-- Tableau des liens Outils Admin -->
     <fieldset class="categorytableau">
-        <legend>Tableau des liens des Outils Admin</legend>
+        <legend>Tableau des liens du Dashboard</legend>
         <table class="tableaucachet">
             <thead>
                 <tr>

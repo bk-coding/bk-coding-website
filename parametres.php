@@ -35,7 +35,10 @@ $liens = $stmt->fetchAll();
 ?>
 
 <div class="bodycontent">
-    <button onclick="afficheCat('catliens')">Liens</button>
+    <div style="display:inline-block;">
+        <button onclick="afficheCat('catliens')">Liens du Dashboard</button>
+        <button onclick="afficheCat('catUsers')">Utilisateurs</button>
+    </div>
     <div id="catliens" style="display:none;">
         <!-- Formulaire pour l'ajout et l'édition -->
         <fieldset class="categoryajout">
@@ -105,6 +108,9 @@ $liens = $stmt->fetchAll();
                 </tbody>
             </table>
         </fieldset>
+    </div>
+    <div id="catUsers" style="display:none;">
+        test
     </div>
 </div>
 

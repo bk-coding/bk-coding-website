@@ -59,11 +59,11 @@ $utilisateurs = $stmtUsers->fetchAll();
 
 <div class="bodycontent">
     <div id="paramtoolbar">
-        <button onclick="afficheCat('catliens')">Liens du Dashboard</button>
+        <button onclick="afficheCat('catliens')" class="active">Liens du Dashboard</button>
         <button onclick="afficheCat('catUsers')">Utilisateurs</button>
     </div>
     <hr>
-    <div id="catliens" style="display:none;">
+    <div id="catliens" style="display:block;">
         <!-- Formulaire pour l'ajout et l'édition -->
         <fieldset class="categoryajout">
             <legend>Ajouter/Editer un lien au Dashboard</legend>

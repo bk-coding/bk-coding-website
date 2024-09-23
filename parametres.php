@@ -36,12 +36,29 @@ $liens = $stmt->fetchAll();
 <div class="bodycontent">
 <!-- Formulaire pour l'ajout et l'édition -->
 <fieldset class="categoryajout">
-        <legend>Ajouter/Editer un lien du Dashboard</legend>
+        <legend>Ajouter/Editer un lien au Dashboard</legend>
         <form method="post">
             <input type="hidden" name="id" value="0" id="lienId">
-            <div><label for="type_section"> Type de section : </label><input type="text" name="type_section" id="type_section" required></div>
+            <div>
+                <label for="type_section"> Type de section : </label>
+                <select name="type_section" id="type_section" required>
+                    <option value="" disabled selected>Choisissez un type de section</option>
+                    <option value="Applis">Applis</option>
+                    <option value="Clients">Clients</option>
+                    <option value="Outils Admin">Outils Admin</option>
+                    <option value="Outils">Outils</option>
+                    <option value="Autre">Autre</option>
+                </select>
+            </div>
             <div><label for="nom_interne"> Nom interne : </label><input type="text" name="nom_interne" id="nom_interne" required></div>
-            <div><label for="cible"> Cible : </label><input type="text" name="cible" id="cible" required></div>
+            <div>
+                <label for="cible"> Cible : </label>
+                <select name="cible" id="cible" required>
+                    <option value="" disabled selected>Choisissez une cible</option>
+                    <option value="_self">Onglet actuel</option>
+                    <option value="_blank">Nouvel onglet</option>
+                </select>
+            </div>
             <div><label for="adresse_lien"> Lien : </label><input type="text" name="adresse_lien" id="adresse_lien" required></div>
             <div><label for="icon"> Icône : </label><input type="text" name="icon" id="icon" required></div>
             <div><label for="titre_bouton"> Titre du bouton : </label><input type="text" name="titre_bouton" id="titre_bouton"></div>

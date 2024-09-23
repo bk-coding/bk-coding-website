@@ -31,6 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['username'], $_POST['password'], $_POST['email'], $_POST['role'])) {
         if ($_POST['user_id'] == 0) { // Ajout
             $stmt = $pdo->prepare("INSERT INTO users (username, password, email, role) VALUES (?, ?, ?, ?)");
+            $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
             $stmt->execute([$_POST['username'], $_POST['password'], $_POST['email'], $_POST['role']]);
         } else { // Mise à jour
             $stmt = $pdo->prepare("UPDATE users SET username = ?, password = ?, email = ?, role = ? WHERE id = ?");

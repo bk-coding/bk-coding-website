@@ -8,10 +8,18 @@ function editLien(lien) {
     document.getElementById('titre_bouton').value = lien.titre_bouton;
     }
 function afficheCat(bouton) {
-    // Vérifie si l'élément existe
-    var element = document.getElementById(bouton);
-    if (element) {
-        // Change l'affichage en "block" ou en "none" selon son état actuel
-        element.style.display = (element.style.display === 'none' || element.style.display === '') ? 'block' : 'none';
+    // Récupérer toutes les divs qui doivent être affichées
+    var categories = ['catliens', 'catUsers'];
+    categories.forEach(function(cat) {
+        var element = document.getElementById(cat);
+        if (element) {
+            element.style.display = 'none';
+        }
+    });
+
+    // Affiche uniquement la div spécifiée
+    var selectedElement = document.getElementById(bouton);
+    if (selectedElement) {
+        selectedElement.style.display = 'block'; // Affiche la div correspondante
     }
 }

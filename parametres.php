@@ -9,8 +9,28 @@ $title = "parametres";
 include('parts/header.php');
 require_once('dbconfig.php');
 
-$stmt = $pdo->prepare("SELECT * FROM sections WHERE type_section = ? ORDER BY id");
-$stmt->execute('Outils Admin');
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    // Ajout ou mise à jour d'un lien
+    if (isset($_POST['type_section'], $_POST['nom_interne'], $_POST['cible'], $_POST['adresse_lien'], $_POST['icon'], $_POST['titre_bouton'])) {
+        if ($_POST['id'] == 0) { // Ajout
+            $stmt = $pdo->prepare("INSERT INTO sections (type_section, nom_interne, cible, adresse_lien, icon, titre_bouton) VALUES (?, ?, ?, ?, ?, ?)");
+            $stmt->execute([$_POST['type_section'], $_POST['nom_interne'], $_POST['cible'], $_POST['adresse_lien'], $_POST['icon'], $_POST['titre_bouton']]);
+        } else { // Mise à jour
+            $stmt = $pdo->prepare("UPDATE sections SET nom_interne = ?, cible = ?, adresse_lien = ?, icon = ?, titre_bouton = ? WHERE id = ?");
+            $stmt->execute([$_POST['nom_interne'], $_POST['cible'], $_POST['adresse_lien'], $_POST['icon'], $_POST['titre_bouton'], $_POST['id']]);
+        }
+    }
+
+    // Suppression d'un cachet
+    if (isset($_POST['delete']) && $_POST['id'] > 0) {
+        $stmt = $pdo->prepare("DELETE FROM sections WHERE id = ?");
+        $stmt->execute([$_POST['id']]);
+    }
+}
+
+$stmt = $pdo->prepare("SELECT * FROM sections WHERE type_section = :type_section ORDER BY id");
+$stmt->bindValue(':type_section', 'Outils Admin');
+$stmt->execute();
 $outilsadmin = $stmt->fetchAll();
 
 ?>
@@ -68,7 +88,7 @@ $outilsadmin = $stmt->fetchAll();
     </fieldset>
 
     <script>
-    function editLienoutilsadmin($lienoutilsadmin) {
+    function editLienOutilsAdmin($lienoutilsadmin) {
         document.getElementById('lienId').value = $lienoutilsadmin.id;
         document.getElementById('type_section').value = $lienoutilsadmin.type_section;
         document.getElementById('nom_interne').value = $lienoutilsadmin.nom_interne;

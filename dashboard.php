@@ -23,7 +23,8 @@ include('parts/header.php'); ?>
             ["name" => "cemasophro", "target" => "_blank", "href" => "https://cemasophro.com/wp-admin", "icon" => "fa-book-bookmark", "label" => "Cemasophro"]
         ],
         "Outils Admin" => [
-            ["name" => "hashmdp", "target" => "_self", "href" => "hashmdp.php", "icon" => "fa-clipboard-check", "label" => "HashMDP"]
+            ["name" => "hashmdp", "target" => "_self", "href" => "hashmdp.php", "icon" => "fa-clipboard-check", "label" => "HashMDP"],
+            ["name" => "parametres", "target" => "_self", "href" => "parametres.php", "icon" => "fa-gears", "label" => "Paramètres"]
         ],
         "Outils" => [
             ["name" => "intermittent", "target" => "_self", "href" => "intermittent.php", "icon" => "fa-clipboard-check", "label" => "Intermittence"]

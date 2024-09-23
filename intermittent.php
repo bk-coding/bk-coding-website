@@ -2,7 +2,7 @@
 BK-Coding.net
 file: intermittent.php
 author: Bastien Kilian
- -->
+-->
 
 <?php
 $title = "intermittence";

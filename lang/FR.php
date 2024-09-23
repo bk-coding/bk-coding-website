@@ -14,7 +14,8 @@ $lang = array(
     "message1.2" => " ! Vous êtes connecté.",
     "infos" => "Informations",
     "intermittence" => "Intermittence",
-    "hashmdp" => "HashMDP"
+    "hashmdp" => "HashMDP",
+    "parametres" => "Paramètres"
 );
 
 ?>

@@ -86,7 +86,7 @@ $outilsadmin = $stmt->fetchAll();
             </tbody>
         </table>
     </fieldset>
-
+</div>
     <script>
     function editLienOutilsAdmin($lienoutilsadmin) {
         document.getElementById('lienId').value = $lienoutilsadmin.id;

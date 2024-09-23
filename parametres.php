@@ -33,6 +33,7 @@ $stmt->execute();
 $liens = $stmt->fetchAll();
 
 ?>
+
 <div class="bodycontent">
     <button onclick="afficheCat('catliens')">Liens</button>
     <div id="catliens" style="display:none;">
@@ -105,9 +106,6 @@ $liens = $stmt->fetchAll();
             </table>
         </fieldset>
     </div>
-                <div>
-                    <label for="adresse_lien"> Lien : </label>
-                    <input type="text" name="adresse_lien" id="adresse_lien" required>
 </div>
 
 <script>

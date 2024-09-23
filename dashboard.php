@@ -24,7 +24,8 @@ session_start();
         $links = $stmt->fetchAll();
         
         // Filtrer les sections selon le rôle de l'utilisateur
-        if ($role === 'admin'){
+        if ($role === 'admin' && in_array($type, ['Applis', 'Clients', 'Outils Admin','Outils'])){
+            $userSections[$type] = $links;
         } elseif ($role === 'user' && in_array($type, ['Outils'])) {
             $userSections[$type] = $links;
         } elseif ($role === 'guest' && $type === 'Autre') {

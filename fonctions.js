@@ -44,4 +44,27 @@ function afficheCat(bouton) {
         activeButton.classList.add('active'); // Ajoute la classe 'active' au bouton actif
     }
 }
+function submitForm(formId) {
+    var formData = new FormData(document.getElementById(formId));
+    
+    // Envoyer la requête AJAX
+    fetch('parametres.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => {
+        // Vérifiez si la réponse est ok (statut 200-299)
+        if (!response.ok) {
+            throw new Error('Network response was not ok ' + response.statusText);
+        }
+        return response.json(); // On retourne directement la réponse au format JSON
+    })
+    .then(data => {
+        // Réinitialiser le formulaire ou mettre à jour l'interface si nécessaire
+        document.getElementById(formId).reset();
+    })
+    .catch(error => {
+        console.error('Erreur:', error);
+    });
+}
 

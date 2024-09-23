@@ -15,9 +15,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if ($_POST['id'] == 0) { // Ajout
             $stmt = $pdo->prepare("INSERT INTO sections (type_section, nom_interne, cible, adresse_lien, icon, titre_bouton) VALUES (?, ?, ?, ?, ?, ?)");
             $stmt->execute([$_POST['type_section'], $_POST['nom_interne'], $_POST['cible'], $_POST['adresse_lien'], $_POST['icon'], $_POST['titre_bouton']]);
+            echo json_encode(['success' => true, 'message' => 'Lien ajouté avec succès.']);
+            exit;
         } else { // Mise à jour
             $stmt = $pdo->prepare("UPDATE sections SET nom_interne = ?, cible = ?, adresse_lien = ?, icon = ?, titre_bouton = ? WHERE id = ?");
             $stmt->execute([$_POST['nom_interne'], $_POST['cible'], $_POST['adresse_lien'], $_POST['icon'], $_POST['titre_bouton'], $_POST['id']]);
+            echo json_encode(['success' => true, 'message' => 'Lien mis à jour avec succès.']);
+            exit;
         }
     }
 
@@ -25,6 +29,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['delete']) && $_POST['id'] > 0) {
         $stmt = $pdo->prepare("DELETE FROM sections WHERE id = ?");
         $stmt->execute([$_POST['id']]);
+        echo json_encode(['success' => true, 'message' => 'Lien supprimé avec succès.']);
+        exit;
     }
 
     // Ajout ou mise à jour d'un utilisateur
@@ -33,9 +39,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $stmt = $pdo->prepare("INSERT INTO users (username, password, email, role) VALUES (?, ?, ?, ?)");
             $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
             $stmt->execute([$_POST['username'], $password, $_POST['email'], $_POST['role']]);
+            echo json_encode(['success' => true, 'message' => 'Utilisateur ajouté avec succès.']);
+            exit;
         } else { // Mise à jour
             $stmt = $pdo->prepare("UPDATE users SET username = ?, password = ?, email = ?, role = ? WHERE id = ?");
             $stmt->execute([$_POST['username'], $_POST['password'], $_POST['email'], $_POST['role'], $_POST['user_id']]);
+            echo json_encode(['success' => true, 'message' => 'Utilisateur mis à jour avec succès.']);
+            exit;
         }
     }
 
@@ -43,6 +53,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['deleteUser']) && $_POST['user_id'] > 0) {
         $stmt = $pdo->prepare("DELETE FROM users WHERE id = ?");
         $stmt->execute([$_POST['user_id']]);
+        echo json_encode(['success' => true, 'message' => 'Utilisateur supprimé avec succès.']);
+        exit;
     }
 }
 
@@ -68,7 +80,7 @@ $utilisateurs = $stmtUsers->fetchAll();
         <!-- Formulaire pour l'ajout et l'édition -->
         <fieldset class="categoryajout">
             <legend>Ajouter/Editer un lien au Dashboard</legend>
-            <form method="post">
+            <form id="linkForm" onsubmit="event.preventDefault(); submitForm('linkForm');">
             <input type="hidden" name="id" value="0" id="lienId">
             <div>
                 <label for="type_section"> Type de section : </label>
@@ -137,7 +149,7 @@ $utilisateurs = $stmtUsers->fetchAll();
     <div id="catUsers" style="display:none;">
         <fieldset class="categoryajout">
         <legend>Ajouter/Editer un Utilisateur</legend>
-        <form method="post">
+        <form id="userForm" onsubmit="event.preventDefault(); submitForm('userForm');">
             <input type="hidden" name="user_id" value="0" id="userId">
             <div>
                 <label for="username"> Nom d'utilisateur : </label>

@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 
-$stmt = $pdo->prepare("SELECT * FROM sections ORDER BY id");
+$stmt = $pdo->prepare("SELECT * FROM sections ORDER BY type_section");
 $stmt->execute();
 $liens = $stmt->fetchAll();
 

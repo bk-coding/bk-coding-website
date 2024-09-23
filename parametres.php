@@ -34,8 +34,8 @@ $liens = $stmt->fetchAll();
 
 ?>
 <div class="bodycontent">
-    <button onclick="afficheCat('liens')">Liens</button>
-    <div id="liens" style="display:none;">
+    <button onclick="afficheCat('catliens')">Liens</button>
+    <div id="catliens" style="display:none;">
         <!-- Formulaire pour l'ajout et l'édition -->
         <fieldset class="categoryajout">
             <legend>Ajouter/Editer un lien au Dashboard</legend>

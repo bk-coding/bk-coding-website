@@ -9,7 +9,8 @@ function editLien(lien) {
     }
 function afficheCat(bouton) {
     // Récupérer toutes les divs qui doivent être affichées
-    var categories = ['catliens', 'catUsers'];
+    var categories = ['catliens', 'catUsers']; 
+    // Masquer toutes les catégories
     categories.forEach(function(cat) {
         var element = document.getElementById(cat);
         if (element) {
@@ -22,4 +23,17 @@ function afficheCat(bouton) {
     if (selectedElement) {
         selectedElement.style.display = 'block'; // Affiche la div correspondante
     }
+
+    // Changer l'apparence des boutons
+    var buttons = document.querySelectorAll('#paramtoolbar button'); // Sélectionne tous les boutons
+    buttons.forEach(function(btn) {
+        btn.classList.remove('active'); // Supprime la classe 'active' de tous les boutons
+    });
+
+    // Ajouter la classe 'active' au bouton cliqué
+    var activeButton = Array.from(buttons).find(btn => btn.onclick.toString().includes(bouton));
+    if (activeButton) {
+        activeButton.classList.add('active'); // Ajoute la classe 'active' au bouton actif
+    }
 }
+

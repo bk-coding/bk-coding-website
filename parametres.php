@@ -35,7 +35,7 @@ $liens = $stmt->fetchAll();
 ?>
 
 <div class="bodycontent">
-    <div style="display:inline-block;">
+    <div id="paramtoolbar" style="display:inline-block;">
         <button onclick="afficheCat('catliens')">Liens du Dashboard</button>
         <button onclick="afficheCat('catUsers')">Utilisateurs</button>
     </div>

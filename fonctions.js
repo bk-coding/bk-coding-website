@@ -56,7 +56,7 @@ function submitForm(formId) {
         if (!response.ok) {
             throw new Error('Network response was not ok: ' + response.statusText);
         }
-        return response.text(); // Récupérer la réponse en texte brut
+        return response.json(); // Récupérer la réponse en texte brut
     })
     .then(data => {
         console.log("Réponse brute :", data); // Afficher la réponse brute pour débogage

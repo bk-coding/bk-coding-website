@@ -148,18 +148,14 @@ a {
 .categorytoolbar {
 	background-color: var(--colorblack);
 	border-radius: 10px;
-	margin: 2vh 2vw;
 }
 .categorytoolbar div {
 	display:block;
 	text-align:center;
 }
 .toolbarbtn {
-	padding: 2vh 2vw;
+	padding: 1vh 1vw;
 	font-weight: bold;
-	display: inline-flex;
-	justify-content: center;
-	align-content: center;
 }
 .categorytableau {
 	border-radius: 10px;

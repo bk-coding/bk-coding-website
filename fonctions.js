@@ -15,32 +15,18 @@ function editUser(utilisateur) {
     document.getElementById('role').value = utilisateur.role;
 }
 
-function afficheCat(bouton) {
-    // Récupérer toutes les divs qui doivent être affichées
-    var categories = ['catliens', 'catUsers']; 
-    // Masquer toutes les catégories
-    categories.forEach(function(cat) {
-        var element = document.getElementById(cat);
-        if (element) {
-            element.style.display = 'none';
-        }
+function afficheCat(cat) {
+    var cats = ['catliens', 'catUsers'];
+    cats.forEach(function(c) {
+        document.getElementById(c).style.display = (c === cat) ? 'block' : 'none';
     });
+    
+    document.getElementById('btnLiens').classList.remove('active');
+    document.getElementById('btnUsers').classList.remove('active');
 
-    // Affiche uniquement la div spécifiée
-    var selectedElement = document.getElementById(bouton);
-    if (selectedElement) {
-        selectedElement.style.display = 'block'; // Affiche la div correspondante
-    }
-
-    // Changer l'apparence des boutons
-    var buttons = document.querySelectorAll('#paramtoolbar button'); // Sélectionne tous les boutons
-    buttons.forEach(function(btn) {
-        btn.classList.remove('active'); // Supprime la classe 'active' de tous les boutons
-    });
-
-    // Ajouter la classe 'active' au bouton cliqué
-    var activeButton = Array.from(buttons).find(btn => btn.onclick.toString().includes(bouton));
-    if (activeButton) {
-        activeButton.classList.add('active'); // Ajoute la classe 'active' au bouton actif
+    if (cat === 'catUsers') {
+        document.getElementById('btnUsers').classList.add('active');
+    } else {
+        document.getElementById('btnLiens').classList.add('active');
     }
 }

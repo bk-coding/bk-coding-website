@@ -27,7 +27,7 @@ include ('lang/FR.php');
 			<div class="infocreation">
 				<h1><?= $lang["sitename"]; ?></h1>
 				<form action="authentification.php" method="post">
-					<fieldset class="categorytableau">
+					<fieldset class="categoryajout">
 						<legend>Connexion</legend>
 						<div><label for="username">Nom d'utilisateur :</label><input type="text" name="username" /></div>
 						<div><label for="password">Mot de passe :</label><input type="password" name="password" /></div>

@@ -90,7 +90,7 @@ $utilisateurs = $stmtUsers->fetchAll();
 
 <div class="bodycontent">
     <fieldset class="categoryajout">
-        <div>
+        <div style="display:block; text-align:center;">
             <button id="btnLiens" onclick="afficheCat('catliens')" class="active">Liens du Dashboard</button>
             <button id="btnUsers" onclick="afficheCat('catUsers')">Utilisateurs</button>
         </div>

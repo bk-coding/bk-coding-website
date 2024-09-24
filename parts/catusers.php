@@ -1,3 +1,44 @@
+<?php
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+// Ajout ou mise à jour d'un utilisateur
+if (isset($_POST['username'], $_POST['password'], $_POST['email'], $_POST['role'])) {
+    if ($_POST['user_id'] == 0) { // Ajout
+        $stmt = $pdo->prepare("INSERT INTO users (username, password, email, role) VALUES (?, ?, ?, ?)");
+        $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+        $stmt->execute([$_POST['username'], $password, $_POST['email'], $_POST['role']]);
+        echo "<script>
+            window.onload = function() {
+                afficheCat('catUsers');
+            };
+        </script>";
+    } else { // Mise à jour
+        $stmt = $pdo->prepare("UPDATE users SET username = ?, password = ?, email = ?, role = ? WHERE id = ?");
+        $stmt->execute([$_POST['username'], $_POST['password'], $_POST['email'], $_POST['role'], $_POST['user_id']]);
+        echo "<script>
+            window.onload = function() {
+                afficheCat('catUsers');
+            };
+        </script>";
+    }
+}
+
+// Suppression d'un utilisateur
+if (isset($_POST['deleteUser']) && $_POST['user_id'] > 0) {
+    $stmt = $pdo->prepare("DELETE FROM users WHERE id = ?");
+    $stmt->execute([$_POST['user_id']]);
+    echo "<script>
+            window.onload = function() {
+                afficheCat('catUsers');
+            };
+        </script>";
+}
+}
+// Récupérer les utilisateurs
+$stmtUsers = $pdo->prepare("SELECT * FROM users ORDER BY username");
+$stmtUsers->execute();
+$utilisateurs = $stmtUsers->fetchAll();
+?>
+
 <div id="catUsers" style="display:none;">
     <!-- Formulaire pour l'ajout et l'édition des utilisateurs -->
         <fieldset class="categoryajout">

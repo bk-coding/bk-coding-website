@@ -91,8 +91,8 @@ $utilisateurs = $stmtUsers->fetchAll();
 <div class="bodycontent">
     <fieldset class="categorytoolbar">
         <div>
-            <button id="btnLiens" onclick="afficheCat('catliens')" class="active">Liens du Dashboard</button>
-            <button id="btnUsers" onclick="afficheCat('catUsers')">Utilisateurs</button>
+            <button class="toolbarbtn" id="btnLiens" onclick="afficheCat('catliens')" class="active">Liens du Dashboard</button>
+            <button class="toolbarbtn" id="btnUsers" onclick="afficheCat('catUsers')">Utilisateurs</button>
         </div>
     </fieldset>
     <hr>

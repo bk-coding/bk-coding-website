@@ -155,6 +155,9 @@ a {
 	display:block;
 	text-align:center;
 }
+.toolbarbtn {
+	margin: 2vh 2vw;
+}
 .categorytableau {
 	border-radius: 10px;
 	margin: 2vh 2vw;

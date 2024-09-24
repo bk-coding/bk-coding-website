@@ -168,11 +168,6 @@ a {
 	padding: 10px;
 	border: 1px solid var(--colorblack);
 }
-#paramtoolbar {
-	display: inline-flex;
-	justify-content: center;
-
-}
 .active {
 	background-color: #007BFF;
 	color: white;

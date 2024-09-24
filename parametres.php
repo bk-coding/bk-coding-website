@@ -89,10 +89,10 @@ $utilisateurs = $stmtUsers->fetchAll();
 ?>
 
 <div class="bodycontent">
-    <div id="paramtoolbar">
+    <fieldset class="categoryajout">
         <button id="btnLiens" onclick="afficheCat('catliens')" class="active">Liens du Dashboard</button>
         <button id="btnUsers" onclick="afficheCat('catUsers')">Utilisateurs</button>
-    </div>
+    </fieldset>
     <hr>
     <div id="catliens" style="display:block;">
         <!-- Formulaire pour l'ajout et l'édition -->

@@ -149,6 +149,7 @@ a {
 .categorytoolbar {
 	background-color: var(--colorblack);
 	border-radius: 10px;
+	align-content: center;
 }
 .categorytoolbar div {
 	text-align:center;

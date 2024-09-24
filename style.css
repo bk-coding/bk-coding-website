@@ -149,7 +149,6 @@ a {
 	background-color: var(--colorblack);
 	border-radius: 10px;
 	margin: 2vh 2vw;
-	padding: 2vh 2vw;
 }
 .categorytoolbar div {
 	display:block;
@@ -157,6 +156,7 @@ a {
 }
 .toolbarbtn {
 	padding: 2vh 2vw;
+	font-weight: bold;
 }
 .categorytableau {
 	border-radius: 10px;

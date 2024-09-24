@@ -13,7 +13,8 @@ require_once('dbconfig.php');
 <div class="bodycontent">
     <fieldset class="categorytoolbar">
         <div>
-            <button class="toolbarbtn active" id="btnLiens" onclick="afficheCat('catliens')" class="active">Liens du Dashboard</button>
+            <button class="toolbarbtn active" id="btnLiens" onclick="afficheCat('catliens')" class="active">Liens du
+                Dashboard</button>
             <button class="toolbarbtn" id="btnUsers" onclick="afficheCat('catUsers')">Utilisateurs</button>
         </div>
     </fieldset>

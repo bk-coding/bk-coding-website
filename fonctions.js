@@ -47,7 +47,6 @@ function afficheCat(bouton) {
 function submitForm(formId) {
     var formData = new FormData(document.getElementById(formId));
     
-    // Envoyer la requête AJAX
     fetch('parametres.php', {
         method: 'POST',
         body: formData
@@ -55,17 +54,27 @@ function submitForm(formId) {
     .then(response => {
         // Vérifiez si la réponse est ok (statut 200-299)
         if (!response.ok) {
-            throw new Error('Network response was not ok ' + response.statusText);
+            throw new Error('Network response was not ok: ' + response.statusText);
         }
-        return response.json(); // On retourne directement la réponse au format JSON
+        return response.text(); // Récupérer la réponse en texte brut
     })
     .then(data => {
-        alert(data.message);
-        document.getElementById(formId).reset();
-        reloadData();
+        console.log("Réponse brute :", data); // Afficher la réponse brute pour débogage
+        let jsonData;
+        try {
+            jsonData = JSON.parse(data); // Essayez de convertir la réponse en JSON
+        } catch (e) {
+            throw new Error('Erreur lors de la conversion JSON: ' + e.message);
+        }
+        
+        console.log(jsonData.message); // Afficher le message de succès ou d'erreur
+        alert(jsonData.message); // Optionnel : message de confirmation
+        document.getElementById(formId).reset(); // Réinitialiser le formulaire
+
+        // Vous pouvez ajouter ici du code pour mettre à jour l'interface
     })
     .catch(error => {
-        alert('Une erreur est survenue : ' + error.message);
+        console.error('Erreur:', error);
+        alert('Une erreur est survenue: ' + error.message);
     });
 }
-

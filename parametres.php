@@ -15,11 +15,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if ($_POST['id'] == 0) { // Ajout
             $stmt = $pdo->prepare("INSERT INTO sections (type_section, nom_interne, cible, adresse_lien, icon, titre_bouton) VALUES (?, ?, ?, ?, ?, ?)");
             $stmt->execute([$_POST['type_section'], $_POST['nom_interne'], $_POST['cible'], $_POST['adresse_lien'], $_POST['icon'], $_POST['titre_bouton']]);
+            header('Content-Type: application/json');
             echo json_encode(['success' => true, 'message' => 'Lien ajouté avec succès.']);
             exit;
         } else { // Mise à jour
             $stmt = $pdo->prepare("UPDATE sections SET nom_interne = ?, cible = ?, adresse_lien = ?, icon = ?, titre_bouton = ? WHERE id = ?");
             $stmt->execute([$_POST['nom_interne'], $_POST['cible'], $_POST['adresse_lien'], $_POST['icon'], $_POST['titre_bouton'], $_POST['id']]);
+            header('Content-Type: application/json');
             echo json_encode(['success' => true, 'message' => 'Lien mis à jour avec succès.']);
             exit;
         }
@@ -29,6 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['delete']) && $_POST['id'] > 0) {
         $stmt = $pdo->prepare("DELETE FROM sections WHERE id = ?");
         $stmt->execute([$_POST['id']]);
+        header('Content-Type: application/json');
         echo json_encode(['success' => true, 'message' => 'Lien supprimé avec succès.']);
         exit;
     }
@@ -39,11 +42,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $stmt = $pdo->prepare("INSERT INTO users (username, password, email, role) VALUES (?, ?, ?, ?)");
             $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
             $stmt->execute([$_POST['username'], $password, $_POST['email'], $_POST['role']]);
+            header('Content-Type: application/json');
             echo json_encode(['success' => true, 'message' => 'Utilisateur ajouté avec succès.']);
             exit;
         } else { // Mise à jour
             $stmt = $pdo->prepare("UPDATE users SET username = ?, password = ?, email = ?, role = ? WHERE id = ?");
             $stmt->execute([$_POST['username'], $_POST['password'], $_POST['email'], $_POST['role'], $_POST['user_id']]);
+            header('Content-Type: application/json');
             echo json_encode(['success' => true, 'message' => 'Utilisateur mis à jour avec succès.']);
             exit;
         }
@@ -53,6 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['deleteUser']) && $_POST['user_id'] > 0) {
         $stmt = $pdo->prepare("DELETE FROM users WHERE id = ?");
         $stmt->execute([$_POST['user_id']]);
+        header('Content-Type: application/json');
         echo json_encode(['success' => true, 'message' => 'Utilisateur supprimé avec succès.']);
         exit;
     }

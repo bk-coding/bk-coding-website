@@ -60,11 +60,12 @@ function submitForm(formId) {
         return response.json(); // On retourne directement la réponse au format JSON
     })
     .then(data => {
-        // Réinitialiser le formulaire ou mettre à jour l'interface si nécessaire
+        alert(data.message);
         document.getElementById(formId).reset();
+        reloadData();
     })
     .catch(error => {
-        console.error('Erreur:', error);
+        alert('Une erreur est survenue : ' + error.message);
     });
 }
 

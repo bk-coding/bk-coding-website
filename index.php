@@ -26,17 +26,17 @@ include ('lang/FR.php');
 		<div class="bodycontainer">
 			<div class="infocreation">
 				<h1><?= $lang["sitename"]; ?></h1>
-				<h3>Hello, world!</h3>
-				<p>Le site est en cours de création, et il y a du boulot !<br />
-				Revenez dans quelques temps, et vous pourrez admirer le travail.</p>
-				<form action="authentification.php" method="post">
+				<fieldset class="categorytableau">
+					<legend>Connexion</legend>
+					<form action="authentification.php" method="post">
 					<fieldset>
 						<legend>Connexion</legend>
 						<div><label for="username">Nom d'utilisateur :</label><input type="text" name="username" /></div>
 						<div><label for="password">Mot de passe :</label><input type="password" name="password" /></div>
 						<div><input type="reset" value="Effacer" /><input type="submit" value="Se connecter" /></div>
 					</fieldset>
-				</form>
+					</form>
+				</fieldset>
 			</div>
 		</div>
 	</body>

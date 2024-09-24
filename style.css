@@ -157,6 +157,9 @@ a {
 .toolbarbtn {
 	padding: 2vh 2vw;
 	font-weight: bold;
+	display: flex;
+	justify-content: center;
+	align-content: center;
 }
 .categorytableau {
 	border-radius: 10px;

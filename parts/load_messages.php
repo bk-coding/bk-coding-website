@@ -5,13 +5,15 @@ require_once('./dbconfig.php');
 // Récupérer tous les messages
 $stmt = $pdo->prepare("SELECT username, message, timestamp FROM messages ORDER BY timestamp DESC");
 $stmt->execute();
-$result = $stmt->fetch();
+$result = $stmt->fetchAll();
 // Affichage des messages
-if ($result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()) {
-        echo "<div class='message'><strong>" . $row['username'] . ":</strong> " . $row['message'] . " <em>(" . $row['timestamp'] . ")</em></div>";
+$result = $stmt->fetchAll(); // Récupérez toutes les lignes
+if (count($result) > 0) {
+    foreach ($result as $row) {
+        echo "<div class='message'><strong>" . htmlspecialchars($row['username']) . ":</strong> " . htmlspecialchars($row['message']) . " <em>(" . date('Y-m-d H:i:s', strtotime($row['timestamp'])) . ")</em></div>";
     }
 } else {
     echo "Aucun message pour l'instant.";
 }
+
 ?>

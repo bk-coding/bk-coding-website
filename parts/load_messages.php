@@ -1,10 +1,16 @@
 <?php
 // Inclure le fichier de connexion à la base de données
-//require_once('./dbconfig.php');
+require_once('./dbconfig.php');
+
+// Vérifiez la connexion
+if (!$pdo) {
+    die("Erreur de connexion à la base de données.");
+}
 
 // Récupérer tous les messages
 $stmt = $pdo->prepare("SELECT username, message, timestamp FROM messages ORDER BY timestamp DESC");
 $stmt->execute();
+
 // Affichage des messages
 $result = $stmt->fetchAll();
 if (count($result) > 0) {

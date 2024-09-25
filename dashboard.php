@@ -74,9 +74,9 @@ session_start();
         const xhr = new XMLHttpRequest();
         xhr.open('POST', 'parts/send_message.php', true);
         xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-        xhr.onload = function () {
+        xhr.onload = function() {
             if (this.status == 200) {
-                loadMessages();  // Recharge les messages après l'envoi
+                loadMessages(); // Recharge les messages après l'envoi
             }
         };
         xhr.send(`username=${username}&message=${message}`);
@@ -88,7 +88,7 @@ session_start();
     function loadMessages() {
         const xhr = new XMLHttpRequest();
         xhr.open('GET', 'parts/load_messages.php', true);
-        xhr.onload = function () {
+        xhr.onload = function() {
             if (this.status == 200) {
                 document.getElementById('chat-box').innerHTML = this.responseText;
             }

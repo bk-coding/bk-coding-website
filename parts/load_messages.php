@@ -4,7 +4,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 try {
-    require_once('./dbconfig.php');
+    require_once('../dbconfig.php');
     if (!$pdo) {
         throw new Exception("Erreur de connexion à la base de données.");
     }

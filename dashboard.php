@@ -72,6 +72,10 @@ session_start();
 
         // Envoi du message via une requête AJAX à PHP
         const xhr = new XMLHttpRequest();
+        xhr.onerror = function() {
+            console.error("Une erreur s'est produite lors de la requête.");
+        };
+
         xhr.open('POST', 'parts/send_message.php', true);
         xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
         xhr.onload = function() {
@@ -87,6 +91,10 @@ session_start();
 
     function loadMessages() {
         const xhr = new XMLHttpRequest();
+        xhr.onerror = function() {
+            console.error("Une erreur s'est produite lors de la requête loadMessages.");
+        };
+
         xhr.open('GET', 'parts/load_messages.php', true);
         xhr.onload = function() {
             if (this.status == 200) {

@@ -4,7 +4,7 @@ file: dashboard.php
 author: Bastien Kilian
  -->
 
-<?php 
+<?php
 $title = "dashboard";
 include('parts/header.php');
 require_once('dbconfig.php');
@@ -22,9 +22,9 @@ session_start();
         $stmt = $pdo->prepare("SELECT * FROM sections WHERE type_section = ?");
         $stmt->execute([$type]);
         $links = $stmt->fetchAll();
-        
+
         // Filtrer les sections selon le rôle de l'utilisateur
-        if ($role === 'admin' && in_array($type, ['Applis', 'Clients', 'Outils Admin','Outils'])){
+        if ($role === 'admin' && in_array($type, ['Applis', 'Clients', 'Outils Admin', 'Outils'])) {
             $userSections[$type] = $links;
         } elseif ($role === 'user' && in_array($type, ['Outils'])) {
             $userSections[$type] = $links;
@@ -39,10 +39,10 @@ session_start();
         echo '<fieldset class="category">';
         echo "<legend>$legend</legend>";
         foreach ($links as $link) {
-            echo '<a name="'.$link['nom_interne'].'" target="'.$link['cible'].'" href="'.$link['adresse_lien'].'">';
+            echo '<a name="' . $link['nom_interne'] . '" target="' . $link['cible'] . '" href="' . $link['adresse_lien'] . '">';
             echo '<div class="bouton">';
-            echo '<div><i class="fa-solid '.$link['icon'].'"></i></div>';
-            echo '<div>'.$link['titre_bouton'].'</div>';
+            echo '<div><i class="fa-solid ' . $link['icon'] . '"></i></div>';
+            echo '<div>' . $link['titre_bouton'] . '</div>';
             echo '</div></a>';
         }
         echo '</fieldset>';

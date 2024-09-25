@@ -117,10 +117,11 @@ a {
 }
 .chat-box {
 	width: 80%;
-	height: 400px;
+	height: 150px;
+	background-color: black;
 	border: 1px solid #ccc;
 	padding: 10px;
-	overflow-y: scroll;
+	overflow-y: auto;
 }
 .message {
 	margin-bottom: 10px;

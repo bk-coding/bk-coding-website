@@ -18,7 +18,7 @@ session_start();
             <!-- Les messages vont être affichés ici -->
         </div>
         <form id="chat-form">
-            <input type="hidden" id="username" value="<?php echo $username; ?>" required>
+            <input type="hidden" id="username" value="<?php echo $_SESSION['username']; ?>" required>
             <input type="text" id="message" placeholder="Votre message" required>
             <button type="submit">Envoyer</button>
         </form>

@@ -1,6 +1,6 @@
 <?php
 // Inclure le fichier de connexion à la base de données
-require_once('./dbconfig.php');
+//require_once('./dbconfig.php');
 
 // Récupérer tous les messages
 $stmt = $pdo->prepare("SELECT username, message, timestamp FROM messages ORDER BY timestamp DESC");

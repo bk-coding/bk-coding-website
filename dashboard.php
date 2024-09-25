@@ -12,6 +12,18 @@ session_start();
 ?>
 
 <div class="bodycontent">
+    <fieldset class="category">
+        <legend>Chat</legend>
+        <div class="chat-box" id="chat-box">
+            <!-- Les messages vont être affichés ici -->
+        </div>
+        <form id="chat-form">
+            <input type="hidden" id="username" value="<?php echo $username; ?>" required>
+            <input type="text" id="message" placeholder="Votre message" required>
+            <button type="submit">Envoyer</button>
+        </form>
+    </fieldset>
+
     <?php
     // Fetch les sections de la base de données
     $queryList = ['Applis', 'Clients', 'Outils Admin', 'Outils', 'Autre'];
@@ -49,5 +61,43 @@ session_start();
     }
     ?>
 </div>
+
+<script>
+    const chatForm = document.getElementById('chat-form');
+    chatForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const username = document.getElementById('username').value;
+        const message = document.getElementById('message').value;
+
+        // Envoi du message via une requête AJAX à PHP
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST', 'parts/send_message.php', true);
+        xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        xhr.onload = function () {
+            if (this.status == 200) {
+                loadMessages();  // Recharge les messages après l'envoi
+            }
+        };
+        xhr.send(`username=${username}&message=${message}`);
+
+        // Réinitialise le champ du message
+        document.getElementById('message').value = '';
+    });
+
+    function loadMessages() {
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', 'parts/load_messages.php', true);
+        xhr.onload = function () {
+            if (this.status == 200) {
+                document.getElementById('chat-box').innerHTML = this.responseText;
+            }
+        };
+        xhr.send();
+    }
+
+    // Charger les messages toutes les 2 secondes
+    setInterval(loadMessages, 2000);
+</script>
 
 <?php include('parts/footer.php'); ?>

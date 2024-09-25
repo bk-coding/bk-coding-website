@@ -1,6 +1,5 @@
 <?php
 try {
-    require_once('dbconfig.php');
     if (!$pdo) {
         throw new Exception("Erreur de connexion à la base de données.");
     }

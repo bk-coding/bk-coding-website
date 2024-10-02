@@ -17,11 +17,13 @@ session_start();
         <div class="chat-box" id="chat-box">
             <!-- Les messages vont être affichés ici -->
         </div>
-        <form id="chat-form">
-            <input type="hidden" id="username" value="<?php echo $_SESSION['username']; ?>" required>
-            <input type="text" id="message" spellcheck="true" placeholder="Votre message" required>
-            <div><button type="reset">Effacer</button><button type="submit">Envoyer</button></div>
-        </form>
+        <div>
+            <form id="chat-form">
+                <input type="hidden" id="username" value="<?php echo $_SESSION['username']; ?>" required>
+                <input type="text" id="message" spellcheck="true" placeholder="Votre message" required>
+                <div><button type="reset">Effacer</button><button type="submit">Envoyer</button></div>
+            </form>
+        </div>
     </fieldset>
 
     <?php

@@ -130,19 +130,17 @@ a {
 }
 
 .chat-box {
-	width: 80%;
+	width: 90%;
 	height: 150px;
 	background-color: black;
 	border: 1px solid #ccc;
 	border-radius: 10px;
 	padding: 10px;
 	overflow-y: auto;
+	overflow-x: auto;
 }
 
-#chat-form {
-	padding: 10px;
-}
-#chat-form text {
+.chat-form text {
 	width: 50%;
 }
 

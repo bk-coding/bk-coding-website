@@ -115,6 +115,7 @@ a {
 	justify-content: space-around;
 	align-content: space-around;
 }
+
 .categorychat {
 	border-radius: 10px;
 	margin: 2vh 2vw;
@@ -127,6 +128,7 @@ a {
 	justify-content: space-between;
 	align-items: center;
 }
+
 .chat-box {
 	width: 80%;
 	height: 150px;
@@ -135,10 +137,16 @@ a {
 	padding: 10px;
 	overflow-y: auto;
 }
+
+#chat-form {
+	padding: 10px;
+}
+
 .message {
 	margin-bottom: 10px;
 }
-.message em{
+
+.message em {
 	font-size: small;
 	color: aqua;
 }
@@ -173,19 +181,23 @@ a {
 	display: inline-block;
 	margin: 5px 10px;
 }
+
 .categorytoolbar {
 	background-color: var(--colorblack);
 	border-radius: 10px;
 	align-content: center;
 }
+
 .categorytoolbar div {
-	text-align:center;
+	text-align: center;
 	align-content: center;
 }
+
 .toolbarbtn {
 	padding: 1vh 1vw;
 	font-weight: bold;
 }
+
 .categorytableau {
 	border-radius: 10px;
 	margin: 2vh 2vw;
@@ -208,6 +220,7 @@ a {
 	padding: 10px;
 	border: 1px solid var(--colorblack);
 }
+
 .active {
 	background-color: #007bff;
 	color: white;

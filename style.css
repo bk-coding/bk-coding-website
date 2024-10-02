@@ -125,7 +125,7 @@ a {
 	display: flex;
 	flex-flow: column wrap;
 	justify-content: space-around;
-	align-content: center;
+	align-items: center;
 }
 .chat-box {
 	width: 80%;

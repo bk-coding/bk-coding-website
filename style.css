@@ -129,10 +129,6 @@ a {
 	align-items: center;
 }
 
-.categorychat div {
-	margin: 10px;
-}
-
 .chat-box {
 	width: 90%;
 	height: 150px;
@@ -159,6 +155,10 @@ a {
 	flex-flow: column wrap;
 	justify-content: center;
 	align-items: center;
+}
+
+#message {
+	padding: 10px;
 }
 
 .bouton {

@@ -47,6 +47,7 @@ a {
 
 .wid90 input {
 	width: 90%;
+	text-align: center;
 }
 
 .bodycontainer {
@@ -169,8 +170,8 @@ a {
 	width: 100%;
 	display: flex;
 	flex-flow: column wrap;
-	justify-content: center;
 	align-items: center;
+	text-align: center;
 }
 
 .bouton {

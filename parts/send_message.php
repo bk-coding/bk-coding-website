@@ -4,7 +4,7 @@ try {
     require_once('../dbconfig.php');
 
     $username = $_POST['username'];
-    $message = $_POST['textmessage'];
+    $message = $_POST['message'];
 
     $stmt = $pdo->prepare("INSERT INTO messages (username, message) VALUES (?, ?)");
     $stmt->execute([$username, $message]);

@@ -129,6 +129,10 @@ a {
 	align-items: center;
 }
 
+.categorychat::content {
+	margin: 10px;
+}
+
 .chat-box {
 	width: 90%;
 	height: 150px;

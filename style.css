@@ -138,6 +138,10 @@ a {
 .message {
 	margin-bottom: 10px;
 }
+.message em{
+	font-size: small;
+	color: aqua;
+}
 
 .bouton {
 	background-color: var(--colordarkblue);

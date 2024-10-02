@@ -19,7 +19,7 @@ session_start();
         </div>
         <form id="chat-form">
             <input type="hidden" id="username" value="<?php echo $_SESSION['username']; ?>" required>
-            <input type="text" id="message" placeholder="Votre message" required>
+            <input type="text" id="textmessage" placeholder="Votre message" required>
             <button type="submit">Envoyer</button>
         </form>
     </fieldset>
@@ -68,7 +68,7 @@ session_start();
         event.preventDefault();
 
         const username = document.getElementById('username').value;
-        const message = document.getElementById('message').value;
+        const message = document.getElementById('textmessage').value;
 
         // Envoi du message via une requête AJAX à PHP
         const xhr = new XMLHttpRequest();
@@ -82,7 +82,7 @@ session_start();
         xhr.send(`username=${username}&message=${message}`);
 
         // Réinitialise le champ du message
-        document.getElementById('message').value = '';
+        document.getElementById('textmessage').value = '';
     });
 
     function loadMessages() {

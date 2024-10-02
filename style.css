@@ -142,6 +142,9 @@ a {
 #chat-form {
 	padding: 10px;
 }
+#chat-form text {
+	width: 50%;
+}
 
 .message {
 	margin-bottom: 10px;

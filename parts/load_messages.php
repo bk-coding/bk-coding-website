@@ -12,7 +12,7 @@ try {
 
     if (count($result) > 0) {
         foreach ($result as $row) {
-            echo "<div class='message'><strong>" . htmlspecialchars($row['username']) . ":</strong> " . htmlspecialchars($row['message'], ENT_QUOTES) . " <em>(" . date('d-m-Y H:i:s', strtotime($row['timestamp'])) . ")</em></div>";
+            echo "<div class='message'><em>(" . date('d-m-Y, H:i', strtotime($row['timestamp'])) . ")</em><strong>" . htmlspecialchars($row['username']) . ":</strong> " . htmlspecialchars($row['message'], ENT_QUOTES) . "</div>";
         }
     } else {
         echo "Aucun message pour l'instant.";

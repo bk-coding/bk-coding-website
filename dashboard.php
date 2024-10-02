@@ -17,6 +17,7 @@ session_start();
         <div class="chat-box" id="chat-box">
             <!-- Les messages vont être affichés ici -->
         </div>
+        <br>
         <form id="chat-form">
             <input type="hidden" id="username" value="<?php echo $_SESSION['username']; ?>" required>
             <input type="text" id="message" placeholder="Votre message" required>

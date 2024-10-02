@@ -140,7 +140,7 @@ a {
 	overflow-x: auto;
 }
 
-.chat-form text {
+#chat-form text {
 	width: 50%;
 }
 

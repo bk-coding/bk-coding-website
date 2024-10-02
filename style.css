@@ -161,10 +161,6 @@ a {
 	align-items: center;
 }
 
-#chat-form button {
-	margin: 10px;
-}
-
 .bouton {
 	background-color: var(--colordarkblue);
 	min-width: 50px;

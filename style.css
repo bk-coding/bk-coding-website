@@ -134,6 +134,7 @@ a {
 	height: 150px;
 	background-color: black;
 	border: 1px solid #ccc;
+	border-radius: 10px;
 	padding: 10px;
 	overflow-y: auto;
 }

@@ -148,8 +148,11 @@ a {
 	font-size: small;
 	color: aqua;
 }
+
 #chat-form {
-	justify-items: auto;
+	width: 100%;
+	display: flex;
+	justify-content: center;
 }
 
 .bouton {

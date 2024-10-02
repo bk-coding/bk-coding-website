@@ -6,7 +6,7 @@ try {
         throw new Exception("Erreur de connexion à la base de données.");
     }
 
-    $stmt = $pdo->prepare("SELECT username, message, timestamp FROM messages ORDER BY timestamp DESC");
+    $stmt = $pdo->prepare("SELECT username, message, timestamp FROM messages ORDER BY timestamp");
     $stmt->execute();
     $result = $stmt->fetchAll();
 

@@ -12,7 +12,7 @@ session_start();
 ?>
 
 <div class="bodycontent">
-    <fieldset class="category">
+    <fieldset class="categorychat">
         <legend>Chat</legend>
         <div class="chat-box" id="chat-box">
             <!-- Les messages vont être affichés ici -->

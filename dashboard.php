@@ -92,11 +92,19 @@ session_start();
         xhr.open('GET', 'parts/load_messages.php', true);
         xhr.onload = function() {
             if (this.status == 200) {
-                document.getElementById('chat-box').innerHTML = this.responseText;
+                const chatBox = document.getElementById('chat-box');
+                chatBox.innerHTML = this.responseText;
+                // Scroller automatiquement vers le bas
+                chatBox.scrollTop = chatBox.scrollHeight;
             }
         };
         xhr.send();
     }
+
+    // Charger les messages dès que la page est chargée
+    window.onload = function() {
+        loadMessages();
+    };
 
     // Charger les messages toutes les 2 secondes
     setInterval(loadMessages, 2000);

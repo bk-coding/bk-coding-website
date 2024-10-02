@@ -19,7 +19,7 @@ session_start();
         </div>
         <form id="chat-form">
             <input type="hidden" id="username" value="<?php echo $_SESSION['username']; ?>" required>
-            <input type="text" id="message" placeholder="Votre message" required>
+            <input type="text" id="message" spellcheck="true" size="50" placeholder="Votre message" required>
             <button type="submit">Envoyer</button>
         </form>
     </fieldset>

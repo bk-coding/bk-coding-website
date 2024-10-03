@@ -95,6 +95,7 @@ a {
 
 .logo img {
 	height: var(--height20);
+	border-radius: 50%;
 }
 
 .message {

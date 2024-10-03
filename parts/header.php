@@ -38,7 +38,7 @@ $message = $lang['message1.1'] . $username . $lang['message1.2'];
 <body>
 	<div class="bodycontainer">
 		<div class="header toolbar">
-			<div class="logo"><a href="https://bk-coding.net"><img src="img/logo.webp" /></a></div>
+			<div class="logo"><a href="https://bk-coding.net"><img src="img/logo.png" /></a></div>
 			<div class="message"><?= $message; ?></div>
 			<div class="menu">
 				<a href="parts/infos.php" target="_blank">

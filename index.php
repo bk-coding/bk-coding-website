@@ -25,6 +25,7 @@ include ('lang/FR.php');
 	<body>
 		<div class="bodycontainer">
 			<div class="infocreation">
+				<img src="img/logo.png" />
 				<h1><?= $lang["sitename"]; ?></h1>
 				<form action="authentification.php" method="post">
 					<fieldset class="categoryajout">

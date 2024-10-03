@@ -1,5 +1,5 @@
 <?php
-
+date_default_timezone_set('Europe/Paris');
 try {
     require_once('../dbconfig.php');
     if (!$pdo) {

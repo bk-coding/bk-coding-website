@@ -79,13 +79,13 @@ a {
 .header {
 	height: var(--height10);
 	top: 0px;
-	border-bottom: dashed yellow;
+	border-bottom: dashed orange;
 }
 
 .footer {
 	height: var(--height5);
 	bottom: 0px;
-	border-top: dashed yellow;
+	border-top: dashed orange;
 	justify-content: center;
 }
 
@@ -248,7 +248,7 @@ a {
 }
 
 .active {
-	background-color: #007bff;
-	color: white;
-	border: 2px solid #0056b3;
+	background-color: orange;
+	color: black;
+	border: 2px solid whitesmoke;
 }

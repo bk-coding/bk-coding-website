@@ -94,7 +94,7 @@ a {
 }
 
 .logo img {
-	height: var(--height20);
+	height: var(--height10);
 	border-radius: 50%;
 	margin: 10px;
 }

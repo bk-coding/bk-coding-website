@@ -19,7 +19,7 @@ try {
             $messageTime->setTimezone(new DateTimeZone('Europe/Paris')); // Changer le fuseau horaire vers Paris
 
             // Formatage de la date/heure
-            echo "<div class='messagechat'><em>(" . $messageTime->format('d-m-Y, H:i') . ")</em> <strong>" . htmlspecialchars($row['username']) . " :</strong> " . htmlspecialchars($row['message'], ENT_QUOTES) . "</div>";
+            echo "<div class='messagechat'><em>(" . $messageTime->format('d-m-Y, H:i') . ")</em> - <strong>" . htmlspecialchars($row['username']) . " : </strong> " . htmlspecialchars($row['message'], ENT_QUOTES) . "</div>";
         }
     } else {
         echo "Aucun message pour l'instant.";

@@ -14,7 +14,7 @@ require_once('dbconfig.php');
 // Traitement du formulaire
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Ajout ou mise à jour d'un cachet
-    if (isset($_POST['user'],$_POST['date_debut'], $_POST['date_fin'], $_POST['nombre_cachet'], $_POST['nombre_heure'], $_POST['montant_brut'], $_POST['montant_net'], $_POST['description'])) {
+    if (isset($_POST['user'], $_POST['date_debut'], $_POST['date_fin'], $_POST['nombre_cachet'], $_POST['nombre_heure'], $_POST['montant_brut'], $_POST['montant_net'], $_POST['description'])) {
         if ($_POST['id'] == 0) { // Ajout
             $stmt = $pdo->prepare("INSERT INTO devcachets (user, date_debut, date_fin, nombre_cachet, nombre_heure, montant_brut, montant_net, description) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
             $stmt->execute([$_POST['user'], $_POST['date_debut'], $_POST['date_fin'], $_POST['nombre_cachet'], $_POST['nombre_heure'], $_POST['montant_brut'], $_POST['montant_net'], $_POST['description']]);
@@ -42,7 +42,7 @@ $cachets = $stmt->fetchAll();
     <!-- Formulaire pour l'ajout et l'édition -->
     <fieldset class="categoryajout">
         <legend>Ajouter/Editer une date</legend>
-        <form method="post">
+        <form method="post" onsubmit="return validateForm();">
             <input type="hidden" name="id" value="0" id="cachetId">
             <input type="hidden" name="user" value="<?php echo $user; ?>" id="user">
             <div><label for="date_debut">Date début : </label><input type="date" name="date_debut" id="date_debut" required></div>
@@ -75,8 +75,10 @@ $cachets = $stmt->fetchAll();
             <tbody>
                 <?php foreach ($cachets as $cachet) : ?>
                     <tr>
-                        <td><?php $datedebut = date_create(htmlspecialchars($cachet['date_debut'])); echo date_format($datedebut, "d/m/Y"); ?></td>
-                        <td><?php $datefin = date_create(htmlspecialchars($cachet['date_fin'])); echo date_format($datefin, "d/m/Y"); ?></td>
+                        <td><?php $datedebut = date_create(htmlspecialchars($cachet['date_debut']));
+                            echo date_format($datedebut, "d/m/Y"); ?></td>
+                        <td><?php $datefin = date_create(htmlspecialchars($cachet['date_fin']));
+                            echo date_format($datefin, "d/m/Y"); ?></td>
                         <td><?php echo htmlspecialchars($cachet['nombre_cachet']); ?></td>
                         <td><?php echo htmlspecialchars($cachet['nombre_heure']); ?></td>
                         <td><?php echo htmlspecialchars($cachet['montant_brut']); ?></td>
@@ -141,6 +143,17 @@ $cachets = $stmt->fetchAll();
         document.getElementById('montant_brut').value = cachet.montant_brut;
         document.getElementById('montant_net').value = cachet.montant_net;
         document.getElementById('description').value = cachet.description;
+    }
+
+    function validateForm() {
+        const montantBrut = document.getElementById('montant_brut').value.trim();
+        const montantNet = document.getElementById('montant_net').value.trim();
+
+        if (montantBrut === "" && montantNet === "") {
+            alert("Veuillez remplir au moins un des montants (brut ou net) ou les deux.");
+            return false; // Empêche la soumission du formulaire
+        }
+        return true; // Autorise la soumission du formulaire
     }
 </script>
 

@@ -49,8 +49,8 @@ $cachets = $stmt->fetchAll();
             <div><label for="date_fin"> Date fin : </label><input type="date" name="date_fin" id="date_fin" required></div>
             <div><label for="nombre_cachet"> Nombre de cachet : </label><input type="number" name="nombre_cachet" id="nombre_cachet" required oninput="toggleFields()"></div>
             <div><label for="nombre_heure"> Nombre d'heures : </label><input type="number" name="nombre_heure" id="nombre_heure" required oninput="toggleFields()"></div>
-            <div><label for="montant_brut"> Montant Brut : </label><input type="text" name="montant_brut" id="montant_brut" required></div>
-            <div><label for="montant_net"> Montant Net : </label><input type="text" name="montant_net" id="montant_net" required></div>
+            <div><label for="montant_brut"> Montant Brut : </label><input type="text" name="montant_brut" id="montant_brut" required oninput="updateMontantNet()"></div>
+            <div><label for="montant_net"> Montant Net : </label><input type="text" name="montant_net" id="montant_net" onfocus="setCalculable(false)" onblur="setCalculable(true)"></div>
             <div><label for="description"> Description : </label><input type="text" name="description" id="description"></div>
             <br />
             <div style="display:block; text-align:center;"><input type="reset" value="Effacer"><input type="submit" value="Enregistrer"></div>
@@ -162,14 +162,36 @@ $cachets = $stmt->fetchAll();
         }
     }
 
+    let calculableNet = true; // État pour savoir si le montant_net est calculable
+
+    function updateMontantNet() {
+        if (calculableNet) {
+            const montantBrut = parseFloat(document.getElementById('montant_brut').value.trim()) || 0;
+            const montantNet = montantBrut * (1 - 0.26); // Retirer 26%
+            document.getElementById('montant_net').value = montantNet.toFixed(2); // Affiche le montant net avec 2 décimales
+        }
+    }
+
+    function setCalculable(isCalculable) {
+        calculableNet = isCalculable; // Met à jour l'état calculable lors du focus/perte de focus
+    }
+
     function validateForm() {
         const montantBrut = document.getElementById('montant_brut').value.trim();
         const montantNet = document.getElementById('montant_net').value.trim();
 
-        if (montantBrut === "" && montantNet === "") {
-            alert("Veuillez remplir au moins un des montants (brut ou net) ou les deux.");
+        // Vérifie que montant_brut est rempli
+        if (montantBrut === "") {
+            alert("Veuillez remplir le montant brut.");
             return false; // Empêche la soumission du formulaire
         }
+
+        // Vérifie que l'un ou l'autre champ est rempli
+        if (montantBrut === "" && montantNet === "") {
+            alert("Veuillez remplir au moins le montant brut, le montant net sera calculé automatiquement.");
+            return false; // Empêche la soumission du formulaire
+        }
+
         return true; // Autorise la soumission du formulaire
     }
 </script>

@@ -47,8 +47,8 @@ $cachets = $stmt->fetchAll();
             <input type="hidden" name="user" value="<?php echo $user; ?>" id="user">
             <div><label for="date_debut">Date début : </label><input type="date" name="date_debut" id="date_debut" required></div>
             <div><label for="date_fin"> Date fin : </label><input type="date" name="date_fin" id="date_fin" required></div>
-            <div><label for="nombre_cachet"> Nombre de cachet : </label><input type="number" name="nombre_cachet" id="nombre_cachet" required></div>
-            <div><label for="nombre_heure"> Nombre d'heures : </label><input type="number" name="nombre_heure" id="nombre_heure" required></div>
+            <div><label for="nombre_cachet"> Nombre de cachet : </label><input type="number" name="nombre_cachet" id="nombre_cachet" required oninput="toggleFields()"></div>
+            <div><label for="nombre_heure"> Nombre d'heures : </label><input type="number" name="nombre_heure" id="nombre_heure" required oninput="toggleFields()"></div>
             <div><label for="montant_brut"> Montant Brut : </label><input type="text" name="montant_brut" id="montant_brut" required></div>
             <div><label for="montant_net"> Montant Net : </label><input type="text" name="montant_net" id="montant_net" required></div>
             <div><label for="description"> Description : </label><input type="text" name="description" id="description"></div>
@@ -143,6 +143,23 @@ $cachets = $stmt->fetchAll();
         document.getElementById('montant_brut').value = cachet.montant_brut;
         document.getElementById('montant_net').value = cachet.montant_net;
         document.getElementById('description').value = cachet.description;
+    }
+
+    function toggleFields() {
+        const nombreCachet = document.getElementById('nombre_cachet');
+        const nombreHeure = document.getElementById('nombre_heure');
+
+        if (nombreCachet.value) {
+            nombreHeure.disabled = true; // Désactive le champ nombre_heure
+        } else {
+            nombreHeure.disabled = false; // Réactive le champ nombre_heure
+        }
+
+        if (nombreHeure.value) {
+            nombreCachet.disabled = true; // Désactive le champ nombre_cachet
+        } else {
+            nombreCachet.disabled = false; // Réactive le champ nombre_cachet
+        }
     }
 
     function validateForm() {

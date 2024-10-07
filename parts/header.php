@@ -6,14 +6,14 @@ author: Bastien Kilian
 
 <?php
 session_start();
-if (!$_SESSION['loggedin']) {
+if (isset($_SESSION['loggedin']) && !$_SESSION['loggedin']) {
 	header("Location: index.php");
 	exit;
 }
 $username = $_SESSION['username'];
 include('lang/FR.php');
-$titlea = $lang[$title];
-$message = $lang['message1.1'] . $username . $lang['message1.2'];
+$titlea = htmlspecialchars($lang[$title]);
+$message = htmlspecialchars($lang['message1.1']) . htmlspecialchars($username) . htmlspecialchars($lang['message1.2']);
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -23,7 +23,7 @@ $message = $lang['message1.1'] . $username . $lang['message1.2'];
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<!-- Titre de la fenêtre -->
-	<title><?= $lang["sitename"] . " - " . $titlea; ?></title>
+	<title><?= htmlspecialchars($lang["sitename"]) . " - " . $titlea; ?></title>
 	<!-- mise en place des Favicon's -->
 	<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
@@ -44,7 +44,7 @@ $message = $lang['message1.1'] . $username . $lang['message1.2'];
 				<a href="parts/infos.php" target="_blank">
 					<div><i class="fa-solid fa-circle-info"></i></div>
 				</a>
-				<a href="deconnexion.php" onclick="return confirm('<?php echo $lang['deconnexion']; ?>');">
+				<a href="deconnexion.php" onclick="return confirm('<?= htmlspecialchars($lang['deconnexion']); ?>');" aria-label="Déconnexion">
 					<div><i class="fa-solid fa-power-off"></i></div>
 				</a>
 			</div>

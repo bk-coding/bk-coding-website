@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $stmt->execute([$_POST['username'], $password, $_POST['email'], $_POST['role']]);
             echo "<script>
             window.onload = function() {
-                afficheCat('catUsers');
+                afficheCat('catusers');
             };
         </script>";
         } else { // Mise à jour
@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $stmt->execute([$_POST['username'], $_POST['password'], $_POST['email'], $_POST['role'], $_POST['user_id']]);
             echo "<script>
             window.onload = function() {
-                afficheCat('catUsers');
+                afficheCat('catusers');
             };
         </script>";
         }
@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt->execute([$_POST['user_id']]);
         echo "<script>
             window.onload = function() {
-                afficheCat('catUsers');
+                afficheCat('catusers');
             };
         </script>";
     }

@@ -43,8 +43,7 @@ foreach (glob('parts/param/*.php') as $filename) {
     foreach ($categories as $category) {
         if (file_exists('parts/param/' . $category['id'] . '.php')): ?>
             <div id="<?= $category['id'] ?>" style="display:<?= $category['active'] ? 'block' : 'none'; ?>;">
-                <?=
-                include('parts/param/' . $category['id'] . '.php'); ?>
+                <?php include('parts/param/' . $category['id'] . '.php'); ?>
             </div>
         <?php else: ?>
             <p>Erreur: Le fichier pour <?= $category['label']; ?> est introuvable.</p>

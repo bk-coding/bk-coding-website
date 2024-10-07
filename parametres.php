@@ -42,7 +42,7 @@ foreach (glob('parts/param/*.php') as $filename) {
     // Inclusion dynamique des fichiers
     foreach ($categories as $category) {
         if (file_exists('parts/param/' . $category['id'] . '.php')) {
-            echo '<div id="' . $category['id'] . '">';
+            echo '<div id="' . $category['id'] . '" style="display:' . $category['active'] ? 'block' : 'none' . ';">';
             include('parts/param/' . $category['id'] . '.php');
             echo '</div>';
         } else {

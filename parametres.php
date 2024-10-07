@@ -12,7 +12,7 @@ require_once('dbconfig.php');
 
 <div class="bodycontent">
     <fieldset class="categorytoolbar">
-        <legend>Paramètres</legend>
+        <legend style="text-align: center;">Paramètres</legend>
         <div>
             <button class="toolbarbtn active" id="btnLiens" onclick="afficheCat('catliens')" class="active">Liens du
                 Dashboard</button>

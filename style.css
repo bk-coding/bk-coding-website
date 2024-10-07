@@ -18,6 +18,10 @@ author: Bastien Kilian
 	--transpanoir08: rgba(0, 0, 0, 0.8);
 }
 
+* {
+	box-sizing: border-box;
+}
+
 html,
 body {
 	margin: 0;

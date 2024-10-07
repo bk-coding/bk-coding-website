@@ -224,7 +224,7 @@ a {
 }
 
 .categorytoolbar legend {
-	text-align: center;
+	align-self: center;
 }
 
 .categorytoolbar div {

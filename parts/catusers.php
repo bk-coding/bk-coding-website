@@ -39,7 +39,7 @@ $stmtUsers->execute();
 $utilisateurs = $stmtUsers->fetchAll();
 ?>
 
-<div id="catUsers" style="display:none;">
+<div id="catusers" style="display:none;">
     <!-- Formulaire pour l'ajout et l'édition des utilisateurs -->
     <fieldset class="categoryajout">
         <legend>Ajouter/Editer un Utilisateur</legend>

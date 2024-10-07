@@ -14,6 +14,7 @@ $username = $_SESSION['username'];
 include('lang/FR.php');
 $titlea = htmlspecialchars($lang[$title]);
 $message = htmlspecialchars($lang['message1.1']) . htmlspecialchars($username) . htmlspecialchars($lang['message1.2']);
+$deconnexion = htmlspecialchars($lang['deconnexion'], ENT_QUOTES);
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -44,7 +45,7 @@ $message = htmlspecialchars($lang['message1.1']) . htmlspecialchars($username) .
 				<a href="parts/infos.php" target="_blank">
 					<div><i class="fa-solid fa-circle-info"></i></div>
 				</a>
-				<a href="deconnexion.php" onclick="return confirm('<?= htmlspecialchars($lang['deconnexion']); ?>');" aria-label="Déconnexion">
+				<a href="deconnexion.php" onclick="return confirm('<?= $deconnexion; ?>');" aria-label="Déconnexion">
 					<div><i class="fa-solid fa-power-off"></i></div>
 				</a>
 			</div>

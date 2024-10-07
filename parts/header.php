@@ -14,7 +14,7 @@ $username = $_SESSION['username'];
 include('lang/FR.php');
 $titlea = htmlspecialchars($lang[$title]);
 $message = htmlspecialchars($lang['message1.1']) . htmlspecialchars($username) . htmlspecialchars($lang['message1.2']);
-$deconnexion = htmlspecialchars($lang['deconnexion'], ENT_QUOTES);
+$deconnexion = str_replace("'", "\\'", htmlspecialchars($lang['deconnexion']));
 ?>
 <!DOCTYPE html>
 <html lang="fr">

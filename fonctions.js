@@ -17,7 +17,7 @@ function editUser(utilisateur) {
 }
 
 function afficheCat(cat) {
-	const cats = ["catliens", "catUsers"]; // Il peut être extrait dynamiquement si nécessaire
+	const cats = ["catliens", "catusers"]; // Il peut être extrait dynamiquement si nécessaire
 	cats.forEach(function (c) {
 		document.getElementById(c).style.display = c === cat ? "block" : "none";
 	});

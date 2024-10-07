@@ -12,6 +12,7 @@ require_once('dbconfig.php');
 $categories = [
     ['id' => 'catliens', 'label' => 'Liens du Dashboard', 'active' => true],
     ['id' => 'catusers', 'label' => 'Utilisateurs', 'active' => false],
+    ['id' => 'cattest', 'label' => 'Catégorie de test', 'active' => false],
     // Ajoutez d'autres catégories ici à l'avenir
 ];
 ?>

@@ -23,10 +23,12 @@ $categories = [
             <?php foreach ($categories as $category): ?>
                 <button class="toolbarbtn <?= $category['active'] ? 'active' : ''; ?>"
                     id="btn<?= ucfirst($category['id']); ?>"
+                    data-cat="<?= $category['id']; ?>"
                     onclick="afficheCat('<?= $category['id']; ?>')"
                     aria-pressed="<?= $category['active'] ? 'true' : 'false'; ?>">
                     <?= $category['label']; ?>
                 </button>
+
             <?php endforeach; ?>
         </div>
     </fieldset>

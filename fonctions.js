@@ -17,19 +17,27 @@ function editUser(utilisateur) {
 }
 
 function afficheCat(cat) {
-	const cats = ["catliens", "catusers"]; // Il peut être extrait dynamiquement si nécessaire
-	cats.forEach(function (c) {
-		document.getElementById(c).style.display = c === cat ? "block" : "none";
-	});
+    // Récupérez tous les boutons contenant l'attribut data-cat
+    const buttons = document.querySelectorAll('.toolbarbtn');
+    const cats = []; // Tableau pour contenir les identifiants des catégories
 
-	// Retire "active" de tous les boutons
-	cats.forEach(function (c) {
-		document.getElementById("btn" + ucfirst(c)).classList.remove("active");
-	});
+    buttons.forEach(button => {
+        cats.push(button.getAttribute('data-cat')); // Ajoute chaque data-cat au tableau
+    });
 
-	// Ajoute "active" à celui qui est sélectionné
-	document.getElementById("btn" + ucfirst(cat)).classList.add("active");
+    cats.forEach(function (c) {
+        document.getElementById(c).style.display = c === cat ? "block" : "none";
+    });
+
+    // Retire "active" de tous les boutons
+    cats.forEach(function (c) {
+        document.getElementById("btn" + ucfirst(c)).classList.remove("active");
+    });
+
+    // Ajoute "active" à celui qui est sélectionné
+    document.getElementById("btn" + ucfirst(cat)).classList.add("active");
 }
+
 
 // Fonction d'assistance pour mettre en majuscule la première lettre
 function ucfirst(string) {

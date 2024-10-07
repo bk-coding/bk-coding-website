@@ -37,8 +37,8 @@ $categories = [
     <?php
     // Inclusion dynamique des fichiers
     foreach ($categories as $category) {
-        if (file_exists('parts/' . $category['id'] . '.php')) {
-            include('parts/' . $category['id'] . '.php');
+        if (file_exists('parts/param/' . $category['id'] . '.php')) {
+            include('parts/param/' . $category['id'] . '.php');
         } else {
             echo "<p>Erreur: Le fichier pour {$category['label']} est introuvable.</p>";
         }

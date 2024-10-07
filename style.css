@@ -223,6 +223,10 @@ a {
 	align-content: center;
 }
 
+.categorytoolbar legend {
+	text-align: center;
+}
+
 .categorytoolbar div {
 	text-align: center;
 	align-content: center;

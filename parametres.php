@@ -8,20 +8,39 @@ author: Bastien Kilian
 $title = "parametres";
 include('parts/header.php');
 require_once('dbconfig.php');
+
+$categories = [
+    ['id' => 'catliens', 'label' => 'Liens du Dashboard', 'active' => true],
+    ['id' => 'catUsers', 'label' => 'Utilisateurs', 'active' => false],
+    // Ajoutez d'autres catégories ici à l'avenir
+];
 ?>
 
 <div class="bodycontent">
     <fieldset class="categorytoolbar">
-        <legend align="center">Paramètres</legend>
+        <legend>Paramètres</legend>
         <div>
-            <button class="toolbarbtn active" id="btnLiens" onclick="afficheCat('catliens')" class="active">Liens du
-                Dashboard</button>
-            <button class="toolbarbtn" id="btnUsers" onclick="afficheCat('catUsers')">Utilisateurs</button>
+            <?php foreach ($categories as $category): ?>
+                <button class="toolbarbtn <?= $category['active'] ? 'active' : ''; ?>"
+                    id="btn<?= ucfirst($category['id']); ?>"
+                    onclick="afficheCat('<?= $category['id']; ?>')"
+                    aria-pressed="<?= $category['active'] ? 'true' : 'false'; ?>">
+                    <?= $category['label']; ?>
+                </button>
+            <?php endforeach; ?>
         </div>
     </fieldset>
     <hr>
-    <?php include('parts/catliens.php'); ?>
-    <?php include('parts/catusers.php'); ?>
+    <?php
+    // Inclusion dynamique des fichiers
+    foreach ($categories as $category) {
+        if (file_exists('parts/' . $category['id'] . '.php')) {
+            include('parts/' . $category['id'] . '.php');
+        } else {
+            echo "<p>Erreur: Le fichier pour {$category['label']} est introuvable.</p>";
+        }
+    }
+    ?>
 </div>
 
 <script src="fonctions.js"></script>

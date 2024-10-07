@@ -7,6 +7,7 @@ function editLien(lien) {
 	document.getElementById("icon").value = lien.icon;
 	document.getElementById("titre_bouton").value = lien.titre_bouton;
 }
+
 function editUser(utilisateur) {
 	document.getElementById("userId").value = utilisateur.id;
 	document.getElementById("username").value = utilisateur.username;
@@ -16,17 +17,21 @@ function editUser(utilisateur) {
 }
 
 function afficheCat(cat) {
-	var cats = ["catliens", "catUsers"];
+	const cats = ["catliens", "catUsers"]; // Il peut être extrait dynamiquement si nécessaire
 	cats.forEach(function (c) {
 		document.getElementById(c).style.display = c === cat ? "block" : "none";
 	});
 
-	document.getElementById("btnLiens").classList.remove("active");
-	document.getElementById("btnUsers").classList.remove("active");
+	// Retire "active" de tous les boutons
+	cats.forEach(function (c) {
+		document.getElementById("btn" + ucfirst(c)).classList.remove("active");
+	});
 
-	if (cat === "catUsers") {
-		document.getElementById("btnUsers").classList.add("active");
-	} else {
-		document.getElementById("btnLiens").classList.add("active");
-	}
+	// Ajoute "active" à celui qui est sélectionné
+	document.getElementById("btn" + ucfirst(cat)).classList.add("active");
+}
+
+// Fonction d'assistance pour mettre en majuscule la première lettre
+function ucfirst(string) {
+	return string.charAt(0).toUpperCase() + string.slice(1);
 }

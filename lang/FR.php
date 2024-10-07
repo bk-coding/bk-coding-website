@@ -8,7 +8,7 @@ author: Bastien Kilian
 
 $lang = array(
     "sitename" => "BK-Coding.net",
-    "slogan" => "Veille IT",
+    "slogan" => "Multi-outils",
     "dashboard" => "Tableau de bord",
     "message1.1" => "Bienvenue ",
     "message1.2" => " ! Vous êtes connecté.",

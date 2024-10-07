@@ -131,69 +131,7 @@ $cachets = $stmt->fetchAll();
     </fieldset>
 
 </div>
-<!-- JavaScript pour remplir le formulaire en mode édition -->
-<script>
-    function editCachet(cachet) {
-        document.getElementById('cachetId').value = cachet.id;
-        document.getElementById('user').value = cachet.user;
-        document.getElementById('date_debut').value = cachet.date_debut;
-        document.getElementById('date_fin').value = cachet.date_fin;
-        document.getElementById('nombre_cachet').value = cachet.nombre_cachet;
-        document.getElementById('nombre_heure').value = cachet.nombre_heure;
-        document.getElementById('montant_brut').value = cachet.montant_brut;
-        document.getElementById('montant_net').value = cachet.montant_net;
-        document.getElementById('description').value = cachet.description;
-    }
 
-    function toggleFields() {
-        const nombreCachet = document.getElementById('nombre_cachet');
-        const nombreHeure = document.getElementById('nombre_heure');
-
-        if (nombreCachet.value) {
-            nombreHeure.disabled = true; // Désactive le champ nombre_heure
-        } else {
-            nombreHeure.disabled = false; // Réactive le champ nombre_heure
-        }
-
-        if (nombreHeure.value) {
-            nombreCachet.disabled = true; // Désactive le champ nombre_cachet
-        } else {
-            nombreCachet.disabled = false; // Réactive le champ nombre_cachet
-        }
-    }
-
-    let calculableNet = true; // État pour savoir si le montant_net est calculable
-
-    function updateMontantNet() {
-        if (calculableNet) {
-            const montantBrut = parseFloat(document.getElementById('montant_brut').value.trim()) || 0;
-            const montantNet = montantBrut * (1 - 0.26); // Retirer 26%
-            document.getElementById('montant_net').value = montantNet.toFixed(2); // Affiche le montant net avec 2 décimales
-        }
-    }
-
-    function setCalculable(isCalculable) {
-        calculableNet = isCalculable; // Met à jour l'état calculable lors du focus/perte de focus
-    }
-
-    function validateForm() {
-        const montantBrut = document.getElementById('montant_brut').value.trim();
-        const montantNet = document.getElementById('montant_net').value.trim();
-
-        // Vérifie que montant_brut est rempli
-        if (montantBrut === "") {
-            alert("Veuillez remplir le montant brut.");
-            return false; // Empêche la soumission du formulaire
-        }
-
-        // Vérifie que l'un ou l'autre champ est rempli
-        if (montantBrut === "" && montantNet === "") {
-            alert("Veuillez remplir au moins le montant brut, le montant net sera calculé automatiquement.");
-            return false; // Empêche la soumission du formulaire
-        }
-
-        return true; // Autorise la soumission du formulaire
-    }
-</script>
+<script src="fonctions.js"></script>
 
 <?php include('parts/footer.php'); ?>

@@ -38,7 +38,7 @@ $message = htmlspecialchars($lang['message1.1']) . htmlspecialchars($username) .
 <body>
 	<div class="bodycontainer">
 		<div class="header toolbar">
-			<div class="logo"><a href="https://bk-coding.net"><img src="img/logo.png" /></a></div>
+			<div class="logo"><a href="https://bk-coding.net"><img src="img/logo.png" alt="Logo BK-Coding" /></a></div>
 			<div class="message"><?= $message; ?></div>
 			<div class="menu">
 				<a href="parts/infos.php" target="_blank">

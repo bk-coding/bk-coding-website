@@ -41,13 +41,14 @@ foreach (glob('parts/param/*.php') as $filename) {
     <?php
     // Inclusion dynamique des fichiers
     foreach ($categories as $category) {
-        if (file_exists('parts/param/' . $category['id'] . '.php')) {
-            echo '<div id="' . $category['id'] . '" style="display:' . $category['active'] ? 'block' : 'none' . ';">';
-            include('parts/param/' . $category['id'] . '.php');
-            echo '</div>';
-        } else {
-            echo "<p>Erreur: Le fichier pour {$category['label']} est introuvable.</p>";
-        }
+        if (file_exists('parts/param/' . $category['id'] . '.php')): ?>
+            <div id="<?= $category['id'] ?>" style="display:<?= $category['active'] ? 'block' : 'none'; ?>;">
+                <?=
+                include('parts/param/' . $category['id'] . '.php'); ?>
+            </div>
+        <?php else: ?>
+            <p>Erreur: Le fichier pour <?= $category['label']; ?> est introuvable.</p>
+    <?php endif;
     }
     ?>
 </div>

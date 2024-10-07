@@ -9,12 +9,17 @@ $title = "parametres";
 include('parts/header.php');
 require_once('dbconfig.php');
 
-$categories = [
-    ['id' => 'catliens', 'label' => 'Liens du Dashboard', 'active' => true],
-    ['id' => 'catusers', 'label' => 'Utilisateurs', 'active' => false],
-    ['id' => 'cattest', 'label' => 'Catégorie de test', 'active' => false],
-    // Ajoutez d'autres catégories ici à l'avenir
-];
+// Lister les fichiers dans le dossier parts/param/
+$categories = [];
+foreach (glob('parts/param/*.php') as $filename) {
+    $categoryId = basename($filename, '.php'); // Obtient le nom du fichier sans l'extension
+    $active = (count($categories) === 0); // Active le premier
+    $categories[] = [
+        'id' => $categoryId,
+        'label' => ucfirst(str_replace('cat', '', $categoryId)), // Reformate le label
+        'active' => $active,
+    ];
+}
 ?>
 
 <div class="bodycontent">
@@ -29,7 +34,6 @@ $categories = [
                     aria-pressed="<?= $category['active'] ? 'true' : 'false'; ?>">
                     <?= $category['label']; ?>
                 </button>
-
             <?php endforeach; ?>
         </div>
     </fieldset>
@@ -38,7 +42,9 @@ $categories = [
     // Inclusion dynamique des fichiers
     foreach ($categories as $category) {
         if (file_exists('parts/param/' . $category['id'] . '.php')) {
+            echo '<div id="' . $category['id'] . '">';
             include('parts/param/' . $category['id'] . '.php');
+            echo '</div>';
         } else {
             echo "<p>Erreur: Le fichier pour {$category['label']} est introuvable.</p>";
         }

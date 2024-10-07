@@ -15,7 +15,8 @@ $lang = array(
     "infos" => "Informations",
     "intermittence" => "Intermittence",
     "hashmdp" => "HashMDP",
-    "parametres" => "Paramètres"
+    "parametres" => "Paramètres",
+    "deconnexion" => "Êtes-vous sûr de vouloir vous déconnecter ?\n\nEn cas d'oubli de votre mot de passe, vous devrez contacter l'administrateur."
 );
 
 ?>

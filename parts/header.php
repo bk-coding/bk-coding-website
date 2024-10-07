@@ -44,7 +44,7 @@ $message = $lang['message1.1'] . $username . $lang['message1.2'];
 				<a href="parts/infos.php" target="_blank">
 					<div><i class="fa-solid fa-circle-info"></i></div>
 				</a>
-				<a href="deconnexion.php" onclick="return confirm('Êtes-vous sûr de vouloir vous déconnecter ?<br>En cas d\'oubli de votre mot de passe, vous devrez contacter l\'administrateur.');">
+				<a href="deconnexion.php" onclick="return confirm('<?= $lang['deconnexion']; ?>');">
 					<div><i class="fa-solid fa-power-off"></i></div>
 				</a>
 			</div>

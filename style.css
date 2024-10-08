@@ -250,6 +250,7 @@ a {
 .tableaucachet {
 	width: 100%;
 	border-collapse: collapse;
+	margin: 0 auto;
 }
 
 .tableaucachet thead tr {
@@ -266,25 +267,20 @@ a {
 /* Styles pour les petits écrans */
 @media (max-width: 768px) {
 	.tableaucachet {
-		display: block;
-		width: 100%;
-		/* Transforme le tableau en bloc */
-		overflow-x: auto;
-		/* Ajoute un défilement horizontal */
+		display: block; /* Transforme le tableau en bloc */
+		overflow-x: auto; /* Ajoute un défilement horizontal */
+		margin: 0 auto; /* Centre le tableau */
 	}
 
 	.tableaucachet thead {
-		display: none;
-		/* Cache l'en-tête pour une meilleure vue sur mobile */
+		display: none; /* Cache l'en-tête pour une meilleure vue sur mobile */
 	}
 
 	.tableaucachet tr {
-		display: flex;
-		flex-direction: column;
-		/* Empile les lignes verticalement */
-		margin-bottom: 15px;
-		/* Espacement entre les lignes */
-		width: 100%;
+		display: flex; /*  */
+		flex-direction: column; /* Empile les lignes verticalement */
+		margin-bottom: 15px; /* Espacement entre les lignes */
+		padding: 10px; /* Espacement entre les colonnes */
 	}
 
 	.tableaucachet td {

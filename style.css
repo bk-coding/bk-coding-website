@@ -270,21 +270,16 @@ a {
 		display: block; /* Transforme le tableau en bloc */
 		overflow-x: auto; /* Ajoute un défilement horizontal */
 		margin: 0 auto; /* Centre le tableau */
-		width: 100%;
 	}
 
 	.tableaucachet thead {
 		display: none; /* Cache l'en-tête pour une meilleure vue sur mobile */
 	}
 
-	.tableaucachet tbody {
-		width: 100%;
-	}
-
 	.tableaucachet tr {
 		display: flex; /*  */
 		flex-direction: column; /* Empile les lignes verticalement */
-		margin-bottom: 15px; /* Espacement entre les lignes */
+		margin-bottom: 10px; /* Espacement entre les lignes */
 		padding: 10px; /* Espacement entre les colonnes */
 	}
 

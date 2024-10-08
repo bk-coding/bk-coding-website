@@ -289,8 +289,7 @@ a {
 	}
 
 	.tableaucachet td {
-		display: flex;
-		justify-content: space-between;
+		display: block;
 		position: relative;
 		padding-left: 50%;
 		text-align: right;

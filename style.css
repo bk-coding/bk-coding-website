@@ -288,7 +288,8 @@ a {
 		display: flex;
 		justify-content: space-between;
 		position: relative;
-		padding-left: 20%;
+		padding-left: 50%;
+		text-align: right;
 	}
 
 	.tableaucachet td::before {

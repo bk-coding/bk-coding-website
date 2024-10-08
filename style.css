@@ -249,6 +249,7 @@ a {
 
 .tableaucachet {
 	width: 100%;
+	max-width: 100%;
 	border-collapse: collapse;
 	margin: 0 auto;
 }
@@ -277,29 +278,26 @@ a {
 	}
 
 	.tableaucachet tr {
-		display: flex; /*  */
-		flex-direction: column; /* Empile les lignes verticalement */
+		display: block; /*  */
 		margin-bottom: 10px; /* Espacement entre les lignes */
+		border: 1px solid #ddd;
+		border-radius: 5px;
 		padding: 10px; /* Espacement entre les colonnes */
 	}
 
 	.tableaucachet td {
-		text-align: right;
-		/* Alignement à droite pour les valeurs */
+		display: flex;
+		justify-content: space-between;
 		position: relative;
-		padding-left: 50%;
-		/* Crée de l'espace pour le pseudo-élément avant */
+		padding-left: 20%;
 	}
 
 	.tableaucachet td::before {
 		content: attr(data-label);
-		/* Utilise un attribut data pour afficher les titres */
 		position: absolute;
 		left: 10px;
 		text-align: left;
-		/* Alignement à gauche pour le titre */
 		font-weight: bold;
-		/* Met en gras */
 	}
 }
 

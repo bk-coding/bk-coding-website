@@ -121,10 +121,10 @@ $cachets = $stmt->fetchAll();
             </thead>
             <tbody>
                 <tr>
-                    <td><?php echo $totalNombreCachet; ?></td>
-                    <td><?php echo $totalNombreHeure; ?></td>
-                    <td><?php echo $totalBrut; ?></td>
-                    <td><?php echo $totalNet; ?></td>
+                    <td data-label="Total Cachets"><?php echo $totalNombreCachet; ?></td>
+                    <td data-label="Total Heures"><?php echo $totalNombreHeure; ?></td>
+                    <td data-label="Total Brut"><?php echo $totalBrut; ?></td>
+                    <td data-label="Total Net"><?php echo $totalNet; ?></td>
                 </tr>
             </tbody>
         </table>

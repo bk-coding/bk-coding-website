@@ -75,16 +75,16 @@ $cachets = $stmt->fetchAll();
             <tbody>
                 <?php foreach ($cachets as $cachet) : ?>
                     <tr>
-                        <td><?php $datedebut = date_create(htmlspecialchars($cachet['date_debut']));
+                        <td data-label="Date Début"><?php $datedebut = date_create(htmlspecialchars($cachet['date_debut']));
                             echo date_format($datedebut, "d/m/Y"); ?></td>
-                        <td><?php $datefin = date_create(htmlspecialchars($cachet['date_fin']));
+                        <td data-label="Date Fin"><?php $datefin = date_create(htmlspecialchars($cachet['date_fin']));
                             echo date_format($datefin, "d/m/Y"); ?></td>
-                        <td><?php echo htmlspecialchars($cachet['nombre_cachet']); ?></td>
-                        <td><?php echo htmlspecialchars($cachet['nombre_heure']); ?></td>
-                        <td><?php echo htmlspecialchars($cachet['montant_brut']); ?></td>
-                        <td><?php echo htmlspecialchars($cachet['montant_net']); ?></td>
-                        <td><?php echo htmlspecialchars($cachet['description']); ?></td>
-                        <td>
+                        <td data-label="Nombre de cachets"><?php echo htmlspecialchars($cachet['nombre_cachet']); ?></td>
+                        <td data-label="Nombre d'heures"><?php echo htmlspecialchars($cachet['nombre_heure']); ?></td>
+                        <td data-label="Montant Brut"><?php echo htmlspecialchars($cachet['montant_brut']); ?></td>
+                        <td data-label="Montant Net"><?php echo htmlspecialchars($cachet['montant_net']); ?></td>
+                        <td data-label="Description"><?php echo htmlspecialchars($cachet['description']); ?></td>
+                        <td data-label="Actions">
                             <button onclick="editCachet(<?php echo htmlspecialchars(json_encode($cachet)); ?>)">Éditer</button>
                             <form method="post" style="display:inline;">
                                 <input type="hidden" name="id" value="<?php echo $cachet['id']; ?>">

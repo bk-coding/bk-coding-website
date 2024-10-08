@@ -246,7 +246,6 @@ a {
 }
 
 .tableaucachet {
-	table-layout: auto;
 	width: 100%;
 	border-collapse: collapse;
 }
@@ -257,8 +256,51 @@ a {
 
 .tableaucachet th,
 .tableaucachet td {
-	padding: 10px;
-	border: 1px solid var(--colorblack);
+	padding: 8px;
+	text-align: left;
+	border: 1px solid #ddd;
+}
+
+/* Styles pour les petits écrans */
+@media (max-width: 768px) {
+	.tableaucachet {
+		display: block;
+		/* Transforme le tableau en bloc */
+		overflow-x: auto;
+		/* Ajoute un défilement horizontal */
+	}
+
+	.tableaucachet thead {
+		display: none;
+		/* Cache l'en-tête pour une meilleure vue sur mobile */
+	}
+
+	.tableaucachet tr {
+		display: flex;
+		flex-direction: column;
+		/* Empile les lignes verticalement */
+		margin-bottom: 15px;
+		/* Espacement entre les lignes */
+	}
+
+	.tableaucachet td {
+		text-align: right;
+		/* Alignement à droite pour les valeurs */
+		position: relative;
+		padding-left: 50%;
+		/* Crée de l'espace pour le pseudo-élément avant */
+	}
+
+	.tableaucachet td::before {
+		content: attr(data-label);
+		/* Utilise un attribut data pour afficher les titres */
+		position: absolute;
+		left: 10px;
+		text-align: left;
+		/* Alignement à gauche pour le titre */
+		font-weight: bold;
+		/* Met en gras */
+	}
 }
 
 .active {

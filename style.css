@@ -277,6 +277,10 @@ a {
 		display: none; /* Cache l'en-tête pour une meilleure vue sur mobile */
 	}
 
+	.tableaucachet tbody {
+		width: 100%;
+	}
+
 	.tableaucachet tr {
 		display: flex; /*  */
 		flex-direction: column; /* Empile les lignes verticalement */

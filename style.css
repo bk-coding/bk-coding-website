@@ -284,6 +284,7 @@ a {
 		/* Empile les lignes verticalement */
 		margin-bottom: 15px;
 		/* Espacement entre les lignes */
+		width: 100%;
 	}
 
 	.tableaucachet td {

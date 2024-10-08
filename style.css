@@ -97,6 +97,7 @@ a {
 	bottom: 0px;
 	border-top: dashed orange;
 	justify-content: center;
+	z-index: 99;
 }
 
 .header .logo {

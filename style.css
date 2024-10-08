@@ -89,6 +89,7 @@ a {
 	height: var(--height10);
 	top: 0px;
 	border-bottom: dashed orange;
+	z-index: 99;
 }
 
 .footer {

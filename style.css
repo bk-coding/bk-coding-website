@@ -274,14 +274,18 @@ a {
 	}
 
 	.tableaucachet thead {
-		display: none; /* Cache l'en-tête pour une meilleure vue sur mobile */
+		display: none;
+	}
+
+	.tableaucachet tbody {
+		display: block;
+		width: 100%;
 	}
 
 	.tableaucachet tr {
-		display: block; /*  */
+		display: block;
 		width: 100%;
-		margin-bottom: 10px; /* Espacement entre les lignes */
-		padding: 10px; /* Espacement entre les colonnes */
+		padding: 10px;
 	}
 
 	.tableaucachet td {

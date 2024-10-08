@@ -42,9 +42,9 @@ $deconnexion = htmlspecialchars($lang['deconnexion']);
 			<div class="logo"><a href="https://bk-coding.net"><img src="img/logo.png" alt="Logo BK-Coding" /></a></div>
 			<div class="message"><?= $message; ?></div>
 			<div class="menu">
-				<a href="parts/infos.php" target="_blank">
-					<div><i class="fa-solid fa-circle-info"></i></div>
-				</a>
+				<?php if ($_SESSION['role'] === 'admin') {
+					echo '<a href="parametres.php"><div><i class="fa-solid fa-gears"></i></div></a>';
+				} ?>
 				<a href="deconnexion.php" onclick="return confirm('<?= $deconnexion; ?>');" aria-label="Déconnexion">
 					<div><i class="fa-solid fa-power-off"></i></div>
 				</a>

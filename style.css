@@ -127,6 +127,16 @@ a {
 	margin: 2vh 2vw;
 }
 
+.noaff {
+	display: block;
+}
+
+@media (max-width: 768px){
+	.noaff {
+		display: none;
+	}
+}
+
 .bodycontent {
 	padding: var(--height20) 5vw var(--height5);
 	width: 100%;

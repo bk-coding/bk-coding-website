@@ -257,6 +257,10 @@ a {
 	padding: 2vh 2vw;
 	text-align: center;
 }
+.categorytableau legend {
+	width: auto;
+	margin: auto;
+}
 
 .tableaucachet {
 	width: 100%;

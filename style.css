@@ -257,6 +257,12 @@ a {
 	border-radius: 5px;
 }
 
+.toolbarbtn:hover {
+	cursor: pointer;
+	background-color: orange;
+	color: black;
+}
+
 .active {
 	font-weight: bolder;
 	background-color: orange;

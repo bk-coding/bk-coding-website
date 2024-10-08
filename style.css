@@ -267,6 +267,7 @@ a {
 @media (max-width: 768px) {
 	.tableaucachet {
 		display: block;
+		width: 100%;
 		/* Transforme le tableau en bloc */
 		overflow-x: auto;
 		/* Ajoute un défilement horizontal */

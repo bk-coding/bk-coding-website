@@ -43,10 +43,10 @@ $deconnexion = htmlspecialchars($lang['deconnexion']);
 			<div class="message"><?= $message; ?></div>
 			<div class="menu">
 				<?php if ($_SESSION['role'] === 'admin') {
-					echo '<a href="parametres.php"><div><i class="fa-solid fa-gears"></i> <span class="noaff">Paramètres</span></div></a>';
+					echo '<a href="parametres.php"><div><i class="fa-solid fa-gears"></i><span class="noaff">Paramètres</span></div></a>';
 				} ?>
 				<a href="deconnexion.php" onclick="return confirm('<?= $deconnexion; ?>');" aria-label="Déconnexion">
-					<div><i class="fa-solid fa-power-off"></i> <span class="noaff">Déconnexion</span></div>
+					<div><i class="fa-solid fa-power-off"></i><span class="noaff">Déconnexion</span></div>
 				</a>
 			</div>
 		</div>

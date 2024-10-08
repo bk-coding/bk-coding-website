@@ -93,14 +93,14 @@ $liens = $stmt->fetchAll();
         <tbody>
             <?php foreach ($liens as $lien): ?>
                 <tr>
-                    <td><?php echo htmlspecialchars($lien['type_section']); ?></td>
-                    <td><?php echo htmlspecialchars($lien['nom_interne']); ?></td>
-                    <td><?php echo htmlspecialchars($lien['cible']); ?></td>
-                    <td><?php echo htmlspecialchars($lien['adresse_lien']); ?></td>
-                    <td><?php echo htmlspecialchars($lien['icon']); ?> <i
+                    <td data-label="Type de section"><?php echo htmlspecialchars($lien['type_section']); ?></td>
+                    <td data-label="Nom interne"><?php echo htmlspecialchars($lien['nom_interne']); ?></td>
+                    <td data-label="Cible"><?php echo htmlspecialchars($lien['cible']); ?></td>
+                    <td data-label="Liens"><?php echo htmlspecialchars($lien['adresse_lien']); ?></td>
+                    <td data-label="Icone"><?php echo htmlspecialchars($lien['icon']); ?> <i
                             class="fa-solid <?php echo htmlspecialchars($lien['icon']); ?>"></i></td>
-                    <td><?php echo htmlspecialchars($lien['titre_bouton']); ?></td>
-                    <td>
+                    <td data-label="Titre du bouton"><?php echo htmlspecialchars($lien['titre_bouton']); ?></td>
+                    <td data-label="Actions">
                         <?php if ($lien['nom_interne'] !== 'parametres'):
                         ?><button onclick="editLien(<?php echo htmlspecialchars(json_encode($lien)); ?>)">Éditer</button>
                             <form method="post" style="display:inline;">

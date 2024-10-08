@@ -89,12 +89,12 @@ $utilisateurs = $stmtUsers->fetchAll();
         <tbody>
             <?php foreach ($utilisateurs as $utilisateur): ?>
                 <tr>
-                    <td><?php echo htmlspecialchars($utilisateur['id']); ?></td>
-                    <td><?php echo htmlspecialchars($utilisateur['username']); ?></td>
-                    <td><?php echo htmlspecialchars($utilisateur['password']); ?></td>
-                    <td><?php echo htmlspecialchars($utilisateur['email']); ?></td>
-                    <td><?php echo htmlspecialchars($utilisateur['role']); ?></td>
-                    <td>
+                    <td data-label="ID"><?php echo htmlspecialchars($utilisateur['id']); ?></td>
+                    <td data-label="Nom d'utilisateur"><?php echo htmlspecialchars($utilisateur['username']); ?></td>
+                    <td data-label="Mot de passe"><?php echo htmlspecialchars($utilisateur['password']); ?></td>
+                    <td data-label="Adresse E-mail"><?php echo htmlspecialchars($utilisateur['email']); ?></td>
+                    <td data-label="Rôle"><?php echo htmlspecialchars($utilisateur['role']); ?></td>
+                    <td data-label="Actions">
                         <button
                             onclick="editUser(<?php echo htmlspecialchars(json_encode($utilisateur)); ?>)">Éditer</button>
                         <form method="post" style="display:inline;">

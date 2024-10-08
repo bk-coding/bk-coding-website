@@ -270,6 +270,7 @@ a {
 		display: block; /* Transforme le tableau en bloc */
 		overflow-x: auto; /* Ajoute un défilement horizontal */
 		margin: 0 auto; /* Centre le tableau */
+		width: 100%;
 	}
 
 	.tableaucachet thead {

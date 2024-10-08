@@ -279,9 +279,8 @@ a {
 
 	.tableaucachet tr {
 		display: block; /*  */
+		width: 100%;
 		margin-bottom: 10px; /* Espacement entre les lignes */
-		border: 1px solid #ddd;
-		border-radius: 5px;
 		padding: 10px; /* Espacement entre les colonnes */
 	}
 

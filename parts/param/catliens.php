@@ -101,16 +101,12 @@ $liens = $stmt->fetchAll();
                             class="fa-solid <?php echo htmlspecialchars($lien['icon']); ?>"></i></td>
                     <td data-label="Titre du bouton"><?php echo htmlspecialchars($lien['titre_bouton']); ?></td>
                     <td data-label="Actions">
-                        <?php if ($lien['nom_interne'] !== 'parametres'):
-                        ?><button onclick="editLien(<?php echo htmlspecialchars(json_encode($lien)); ?>)">Éditer</button>
-                            <form method="post" style="display:inline;">
-                                <input type="hidden" name="id" value="<?php echo $lien['id']; ?>">
-                                <input type="hidden" name="delete" value="1">
-                                <input type="submit" value="Supprimer">
-                            </form>
-                        <?php else: ?>
-                            <span>Action désactivée</span>
-                        <?php endif; ?>
+                        <button onclick="editLien(<?php echo htmlspecialchars(json_encode($lien)); ?>)">Éditer</button>
+                        <form method="post" style="display:inline;">
+                            <input type="hidden" name="id" value="<?php echo $lien['id']; ?>">
+                            <input type="hidden" name="delete" value="1">
+                            <input type="submit" value="Supprimer">
+                        </form>
                     </td>
                 </tr>
             <?php endforeach; ?>

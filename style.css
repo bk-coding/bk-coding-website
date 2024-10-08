@@ -237,7 +237,17 @@ a {
 
 .toolbarbtn {
 	padding: 1vh 1vw;
-	font-weight: bold;
+	font-weight: normal;
+	background-color: black;
+	color: white;
+	border: 1px solid whitesmoke ;
+}
+
+.active {
+	font-weight: bolder;
+	background-color: orange;
+	color: black;
+	border: 2px solid whitesmoke;
 }
 
 .categorytableau {
@@ -268,9 +278,12 @@ a {
 /* Styles pour les petits écrans */
 @media (max-width: 768px) {
 	.tableaucachet {
-		display: block; /* Transforme le tableau en bloc */
-		overflow-x: auto; /* Ajoute un défilement horizontal */
-		margin: 0 auto; /* Centre le tableau */
+		display: block;
+		/* Transforme le tableau en bloc */
+		overflow-x: auto;
+		/* Ajoute un défilement horizontal */
+		margin: 0 auto;
+		/* Centre le tableau */
 	}
 
 	.tableaucachet thead {
@@ -303,10 +316,4 @@ a {
 		text-align: left;
 		font-weight: bold;
 	}
-}
-
-.active {
-	background-color: orange;
-	color: black;
-	border: 2px solid whitesmoke;
 }

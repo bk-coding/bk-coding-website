@@ -139,7 +139,7 @@ a {
 }
 
 .bodycontent {
-	padding: var(--height20) 5vw var(--height5);
+	padding: var(--height10) 5vw var(--height5);
 	width: 100%;
 	overflow: auto;
 }

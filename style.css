@@ -293,6 +293,7 @@ a {
 		position: relative;
 		padding-left: 50%;
 		text-align: right;
+		word-break: break-word;
 	}
 
 	.tableaucachet td::before {
